@@ -26,3 +26,15 @@ html.gated body{visibility:hidden}html.gated #cwrap,html.gated #cwrap *{visibili
 
 .lh1{font-size:1.5rem;margin:0}.lwrap>.sub{margin:-8px 0 0}
 .login form[hidden]{display:none!important}
+.uadmin{font-weight:600;margin-right:.6rem}
+.nperm{max-width:40rem;margin:1rem auto}
+.awrap{max-width:52rem}
+.awrap .login{margin-bottom:1rem}
+.chk{display:flex!important;gap:.5rem;align-items:center;font-weight:400;margin-top:.6rem}
+.chk input{width:auto}
+.atbl{overflow-x:auto}
+.atbl table{width:100%;border-collapse:collapse;font-size:.92rem}
+.atbl th,.atbl td{text-align:left;padding:.45rem .4rem;border-bottom:1px solid rgba(127,127,127,.25);vertical-align:middle}
+.atbl td button{font-size:.85rem;padding:.3rem .6rem}
+.atbl td:first-child{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:520px){.atbl thead{display:none}.atbl tr{display:grid;grid-template-columns:1fr auto;gap:.15rem .5rem;padding:.5rem 0;border-bottom:1px solid rgba(127,127,127,.25)}.atbl td{border:0;padding:.1rem 0}.atbl td:first-child{grid-column:1/-1;font-weight:600}.atbl td:last-child{grid-row:2/4;grid-column:2;align-self:center}}

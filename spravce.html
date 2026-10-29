@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs" class="gated">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://hitscounter.dev https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self'; connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="auth.css">
+<script src="supabase.js"></script>
+<script src="auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-admin></script>
+<script src="theme.js"></script>
+<title>Správa – Studovna FBMI</title>
+<meta name="description" content="Správa Studovny FBMI.">
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="index.html"><span class="logo">🦴</span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="tahak-latina.html"><span aria-hidden="true">📜</span> Tahák</a><a href="anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="lwrap awrap">
+<h1 class="lh1">Správa</h1><p class="sub">Jen pro správce. Obsah webu je statický na GitHub Pages – tady se spravují jen účty a PIN.</p>
+<section class="login" aria-labelledby="ph"><h2 id="ph">PIN pro registraci</h2>
+<p class="sub">Aktuální PIN: <b id="a-pin">…</b></p>
+<form id="f-apin" novalidate><div class="pinrow"><label>Nový PIN<input id="a-newpin" type="text" inputmode="numeric" autocomplete="off" maxlength="12" required></label><button class="btn pri" type="submit">Změnit PIN</button></div></form>
+<label class="chk"><input id="a-enf" type="checkbox"> Registrace vyžaduje PIN</label>
+<p id="amsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
+<section class="login" aria-labelledby="uh2"><h2 id="uh2">Uživatelé</h2>
+<div class="atbl"><table><thead><tr><th>E-mail</th><th>Vytvořen</th><th>Role</th><th></th></tr></thead><tbody id="a-users"></tbody></table></div>
+<p id="rmsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
+</div>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Přístup po přihlášení e-mailem. Postup v lekcích se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="#" data-consent-reset>Nastavení měření</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="spravce.js"></script>
+<script src="consent.js" data-ga="G-LTRCBRC44Y"></script>
+<div id="hitc" aria-hidden="true" style="position:absolute;left:-9px;top:0;width:1px;height:1px;overflow:hidden;opacity:0"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium%2Fspravce" alt="" width="1" height="1" referrerpolicy="no-referrer"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium" alt="" width="1" height="1" referrerpolicy="no-referrer"></div>
+</body>
+</html>
