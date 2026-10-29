@@ -30,3 +30,15 @@ body.t-lat #menu a.on{color:#fff}
 .card .tag{border-left:4px solid #0f766e;padding-left:7px}.card .tag.lat{border-left-color:#a33a22;color:#a33a22}
 [data-theme=dark] .card .tag.lat{color:#e0866f}
 @media print{.thero{background:none!important;color:#000;box-shadow:none;border:0}.thero h1,.thero p{color:#000}}
+
+/* Tahák – klidnější verze (schváleno 29. 10. 2026) */
+body.t-lat{--bg:#fbf9f4;--line:#e8e0d0}
+[data-theme=dark] body.t-lat{--bg:#181513}
+body.t-lat .thero{background:#8b2f24!important;border-bottom:0!important;box-shadow:none;padding:18px 20px}
+[data-theme=dark] body.t-lat .thero{background:#5e2019!important}
+body.t-lat .thero h1{font-size:clamp(1.4rem,4vw,1.8rem)}
+body.t-lat h2,body.t-lat h3{font-family:inherit;font-weight:650}
+body.t-lat .toc a{background:transparent!important;border:1px solid var(--line)!important;color:var(--acc)!important}
+body.t-lat details.sec{box-shadow:none;border:1px solid var(--line)}
+body.t-lat th{background:transparent!important;border-bottom:2px solid var(--line)}
+body.t-lat .co{box-shadow:none}
