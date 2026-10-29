@@ -23,6 +23,13 @@
   <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
 </div></header>
 <main class="wrap">
+<style>
+a.zoom{display:block;cursor:zoom-in}a.zoom img{display:block}.zhint{font-weight:600}
+#lb{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+#lb[hidden]{display:none}#lb img{width:min(88vw,1100px);max-height:88vh;object-fit:contain;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);background:#fff}
+#lb button{position:absolute;top:calc(10px + env(safe-area-inset-top));right:12px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#111;font-size:20px;cursor:pointer}
+@media (max-width:600px){#lb{padding:8px}#lb img{width:96vw}}
+</style>
 <section class="hero"><h1>🪨 Obsidian – poznámky, které spolu souvisí</h1><p>Obsidian je zdarma aplikace na poznámky v obyčejných textových souborech (Markdown). Poznámky propojuješ odkazy, takže z anatomie skočíš do latiny jedním klikem. Funguje na PC, Macu, iPhonu i Androidu – a offline.</p><a class="btn pri" href="obsidian/Studijni-vault-starter.zip" download>⬇ Stáhnout startovací vault (ZIP)</a> <a class="btn" href="#navod">🧭 Návod krok za krokem</a></section>
 <div class="subnav"><a href="#navod">1 · Instalace</a><a href="#vault">2 · Vault</a><a href="#sync">3 · iPhone/iPad</a><a href="#pluginy">4 · Pluginy</a><a href="#sablony">5 · Šablony</a><a href="#odkazy">6 · Propojování</a><a href="#ukazky">Jak to vypadá</a><a href="#stahnout">Stáhnout</a></div>
 <p class="sub">Obrázky jsou zjednodušené nákresy – skutečné okno vypadá trochu jinak, ale názvy menu sedí (anglicky, v závorce česky). Podle <a href="https://help.obsidian.md" target="_blank" rel="noopener noreferrer">oficiální nápovědy Obsidianu ↗</a>.</p>
@@ -90,9 +97,9 @@
 
 <section id="ukazky"><h2>👀 Jak to může vypadat</h2><p class="sub">Ukázkové poznámky ze startovacího vaultu (nakreslené nákresy, ne snímky skutečného PC).</p>
 <div class="grid">
-<figure class="panel"><img src="obsidian/ukazka-anatomie.png" alt="Ukázka anatomické poznámky Svaly krku se strukturou složek" style="width:100%;border-radius:10px" loading="lazy"><figcaption class="sub">Anatomie – tabulka svalů, klinická poznámka, odkazy na pojmy.</figcaption></figure>
-<figure class="panel"><img src="obsidian/ukazka-latina.png" alt="Ukázka poznámky z latiny – 1. deklinace" style="width:100%;border-radius:10px" loading="lazy"><figcaption class="sub">Latina – deklinace, slovíčka a doplňovačky pro Anki.</figcaption></figure>
-<figure class="panel"><img src="obsidian/ukazka-slozky.png" alt="Ukázka poznámky ze šablony Zkouška" style="width:100%;border-radius:10px" loading="lazy"><figcaption class="sub">Šablona Zkouška – plán opakování T-14 / T-7 / T-3 / T-1.</figcaption></figure>
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-anatomie.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-anatomie.png" alt="Ukázka anatomické poznámky Svaly krku se strukturou složek" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Anatomie – tabulka svalů, klinická poznámka, odkazy na pojmy.</figcaption></figure>
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-latina.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-latina.png" alt="Ukázka poznámky z latiny – 1. deklinace" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Latina – deklinace, slovíčka a doplňovačky pro Anki.</figcaption></figure>
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-slozky.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-slozky.png" alt="Ukázka poznámky ze šablony Zkouška" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Šablona Zkouška – plán opakování T-14 / T-7 / T-3 / T-1.</figcaption></figure>
 </div>
 <div class="panel"><h3>📁 Struktura složek</h3><pre style="white-space:pre-wrap;margin:0">00 Inbox            ← rychlé nápady, nové poznámky
 01 Atlas/Šablony     ← šablony
@@ -116,5 +123,6 @@ images               ← obrázky</pre></div></section>
 <script src="data.js"></script>
 <script src="site.js"></script>
 <script src="app.js"></script>
+<script src="obsidian-lb.js"></script>
 </body>
 </html>
