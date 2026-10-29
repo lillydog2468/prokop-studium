@@ -1,6 +1,6 @@
 (function(){
 var sb=window.sbClient;if(!sb)return;
-var q=new URLSearchParams(location.search),h=new URLSearchParams(location.hash.slice(1));
+var q=new URLSearchParams(location.search),h=new URLSearchParams((window.sbInitHash||location.hash).slice(1));
 var next=q.get('next')||'index.html';if(!/^[a-z0-9-]+\.html([?#].*)?$/i.test(next))next='index.html';
 var $=function(i){return document.getElementById(i)};
 function say(id,t,kind){var m=$(id);m.textContent=t||'';m.className='lmsg '+(kind||'');m.hidden=!t}
@@ -40,12 +40,13 @@ $('f-reset').onsubmit=function(e){e.preventDefault();var f=this;busy(f,1);say('l
  sb.auth.resetPasswordForEmail($('re-email').value.trim(),{redirectTo:back}).then(function(r){busy(f,0);if(r.error)return say('lmsg',cz(r.error),'err');say('lmsg','Pokud účet existuje, poslali jsme ti e-mail s odkazem na nové heslo.','ok')})};
 $('f-newpw').onsubmit=function(e){e.preventDefault();var f=this,p=$('np-pw').value;if(p.length<8)return say('nmsg','Heslo musí mít aspoň 8 znaků.','err');busy(f,1);
  sb.auth.updateUser({password:p}).then(function(r){busy(f,0);if(r.error)return say('nmsg',cz(r.error),'err');say('nmsg','Heslo změněno. Přesměrovávám…','ok');setTimeout(function(){location.replace(next)},900)})};
-function recov(){$('s-newpw').hidden=false;$('np-pw').focus()}
-var recovery=h.get('type')==='recovery';
-sb.auth.onAuthStateChange(function(ev){if(ev==='PASSWORD_RECOVERY'){recovery=true;recov()}});
+function recov(){$('s-newpw').hidden=false;var g=document.querySelector('.lgrid');if(g)g.hidden=true;var t=document.querySelector('.lh1');if(t)t.textContent='Nové heslo';say('lmsg','');$('np-pw').focus()}
+var recovery=!!window.sbRecovery||h.get('type')==='recovery';window.sbOnRecovery=function(){recovery=true;recov()};
 if(h.get('error')||q.get('error')){var d=h.get('error_description')||q.get('error_description')||'';say('lmsg',/expired|invalid/i.test(d)?'Odkaz v e-mailu už vypršel nebo není platný. Přihlas se, nebo si nech poslat nový.':'Potvrzení se nepovedlo: '+d,'err');return}
 (window.sbReady||sb.auth.getSession()).then(function(r){var ses=r&&r.data&&r.data.session;
- if(recovery){recov();return}
+ if(window.sbRecovery)recovery=true;
+ if(recovery){if(ses)recov();else say('lmsg','Odkaz na nové heslo už vypršel nebo není platný. Nech si poslat nový.','err');return}
+ if(ses&&q.get('zmena')){recov();return}
  if(ses){var conf=h.get('type')==='signup'||h.has('access_token');say('lmsg',conf?'E-mail potvrzen, jsi přihlášen(a). Přesměrovávám…':'Už jsi přihlášen(a) jako '+ses.user.email+'. Přesměrovávám…','ok');setTimeout(function(){location.replace(next)},conf?1200:600);return}
  if(q.get('out'))say('lmsg','Byl(a) jsi odhlášen(a).','ok');else if(q.get('next'))say('lmsg','Pro přístup k materiálům se prosím přihlas.','');});
 })();

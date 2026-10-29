@@ -38,3 +38,24 @@ html.gated body{visibility:hidden}html.gated #cwrap,html.gated #cwrap *{visibili
 .atbl td button{font-size:.85rem;padding:.3rem .6rem}
 .atbl td:first-child{overflow-wrap:anywhere;word-break:break-word}
 @media(max-width:520px){.atbl thead{display:none}.atbl tr{display:grid;grid-template-columns:1fr auto;gap:.15rem .5rem;padding:.5rem 0;border-bottom:1px solid rgba(127,127,127,.25)}.atbl td{border:0;padding:.1rem 0}.atbl td:first-child{grid-column:1/-1;font-weight:600}.atbl td:last-child{grid-row:2/4;grid-column:2;align-self:center}}
+.lgrid[hidden],.login[hidden]{display:none!important}
+.uchpw{margin-right:.6rem}
+/* hlavička: značka na jednom řádku, účet v rozbalovacím menu */
+header.top{max-width:1240px}
+.brand{flex-shrink:0;white-space:nowrap}.brand>span{white-space:nowrap}.brand small{white-space:nowrap}
+#menu{align-items:center}
+.uauth{position:relative}
+.uauth .ubtn{font:inherit;font-size:.9rem;font-weight:500;cursor:pointer;background:transparent;color:var(--ink);border:1px solid var(--line,#d9dfdc);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.uauth .umenu{display:none;position:absolute;right:0;top:calc(100% + 6px);z-index:50;flex-direction:column;align-items:stretch;gap:6px;min-width:220px;background:var(--card,#fff);border:1px solid var(--line,#d9dfdc);border-radius:12px;padding:10px;box-shadow:0 12px 24px rgba(0,0,0,.14)}
+.uauth.open .umenu{display:flex}
+.uauth .umenu .uemail{max-width:none;padding:2px 4px 6px;border-bottom:1px solid var(--line,#d9dfdc)}
+.uauth .umenu a{margin:0;text-align:center}
+#menu .uauth .umenu a{padding:6px 10px;font-size:.9rem}
+@media(min-width:1100px) and (max-width:1199px){.brand small{display:none}}
+@media(max-width:1099px){.burger{display:inline-block}
+ #menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--card);border-bottom:1px solid var(--line);padding:8px 12px 14px;box-shadow:0 12px 24px rgba(0,0,0,.12);z-index:40}
+ #menu.open{display:flex}#menu a{padding:12px 14px;font-size:1.05rem}
+ #menu .uauth{display:flex;flex-direction:column;margin:8px 0 0;padding-top:8px;border-top:1px solid var(--line)}
+ #menu .uauth .ubtn{display:none}
+ #menu .uauth .umenu{display:flex;position:static;box-shadow:none;border:0;padding:0;min-width:0}
+ #menu .uauth .umenu a{padding:10px 14px;font-size:1rem;text-align:left}}

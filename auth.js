@@ -1,7 +1,8 @@
 (function(){
 var s=document.currentScript,URL_=s.getAttribute('data-url'),KEY=s.getAttribute('data-key'),PUB=s.hasAttribute('data-public'),ADM=s.hasAttribute('data-admin');
+var H0=location.hash+'&'+location.search;window.sbRecovery=/(^|[#&?])type=recovery(&|$)/.test(H0);window.sbInitHash=location.hash;
 var sb=window.supabase.createClient(URL_,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'}});
-window.sbClient=sb;
+window.sbClient=sb;sb.auth.onAuthStateChange(function(ev){if(ev==='PASSWORD_RECOVERY'){window.sbRecovery=true;if(window.sbOnRecovery)window.sbOnRecovery()}});
 function here(){var p=location.pathname.split('/').pop()||'index.html';return p+location.search+location.hash}
 function show(){document.documentElement.classList.remove('gated')}
 function addUser(user){
@@ -9,8 +10,14 @@ function addUser(user){
  var e=document.createElement('span');e.className='uemail';e.textContent=user.email;
  var a=document.createElement('a');a.href='#';a.id='logout';a.textContent='Odhlásit';
  a.addEventListener('click',function(ev){ev.preventDefault();try{localStorage.removeItem('sh_pin_ok')}catch(x){}sb.auth.signOut().catch(function(){}).then(function(){location.replace('prihlaseni.html?out=1')})});
- wrap.appendChild(e);wrap.appendChild(a);
- window.sbIsAdmin.then(function(ok){if(!ok)return;var g=document.createElement('a');g.href='spravce.html';g.className='uadmin';g.textContent='Správa';wrap.insertBefore(g,e)});
+ var c=document.createElement('a');c.href='prihlaseni.html?zmena=1&next='+encodeURIComponent(here());c.className='uchpw';c.textContent='Změnit heslo';
+ var bt=document.createElement('button');bt.type='button';bt.className='ubtn';bt.setAttribute('aria-expanded','false');bt.setAttribute('aria-haspopup','true');bt.textContent='👤 Účet';
+ var dd=document.createElement('span');dd.className='umenu';dd.appendChild(e);dd.appendChild(c);dd.appendChild(a);
+ bt.addEventListener('click',function(ev){ev.stopPropagation();var o=wrap.classList.toggle('open');bt.setAttribute('aria-expanded',o?'true':'false')});
+ document.addEventListener('click',function(ev){if(!wrap.contains(ev.target)){wrap.classList.remove('open');bt.setAttribute('aria-expanded','false')}});
+ document.addEventListener('keydown',function(ev){if(ev.key==='Escape'){wrap.classList.remove('open');bt.setAttribute('aria-expanded','false')}});
+ wrap.appendChild(bt);wrap.appendChild(dd);
+ window.sbIsAdmin.then(function(ok){if(!ok)return;var g=document.createElement('a');g.href='spravce.html';g.className='uadmin';g.textContent='Správa';dd.insertBefore(g,c)});
  var m=document.getElementById('menu')||document.getElementById('hubback');
  if(m)m.appendChild(wrap);
 }
