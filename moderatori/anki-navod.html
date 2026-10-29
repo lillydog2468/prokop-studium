@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="cs" class="gated">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<script src="theme.js"></script>
+<title>Návod k Anki – Studovna FBMI</title>
+<meta name="description" content="Krok za krokem: instalace Anki, AnkiWeb, import balíčku a instalace doplňků.">
+<link rel="stylesheet" href="../auth.css"><style id="agate">html.gated body{visibility:hidden}#hubback .uauth{display:inline-flex;margin-left:4px}#hubback .uauth .uemail{display:none}#hubback .uauth a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px}</style>
+<script src="../supabase.js"></script>
+<script src="../auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-staff data-base="../"></script>
+</head>
+<body class="t-anki">
+<header class="nav"><div class="navin">
+  <a class="brand" href="../index.html"><span class="logo"><img src="../logo.svg" alt="" width="38" height="38"></span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="../index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="../lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="tahak-latina.html"><span aria-hidden="true">📜</span> Tahák</a><a href="../anki.html" class="on" aria-current="page"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="../o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="phead"><div class="thero"><div class="tlogo"><img src="../theme/anki-logo.svg" alt="Logo Anki" width="56" height="56"></div><div><a class="back" href="../anki.html">← Anki</a><h1>Návod k Anki krok za krokem</h1><p>Instalace, synchronizace, import balíčků a doplňky.</p></div></div><p class="sub">Obrázky jsou zjednodušené nákresy – skutečné okno vypadá trochu jinak, ale názvy tlačítek sedí (anglicky, v závorce česky). Podle <a href="https://docs.ankiweb.net" target="_blank" rel="noopener noreferrer">oficiálního manuálu Anki ↗</a>.</p>
+<div class="subnav"><a href="#instalace">1 · Instalace</a><a href="#sync">2 · AnkiWeb sync</a><a href="#import">3 · Import .apkg</a><a href="#doplnky">4 · Doplňky</a></div></div>
+
+<section id="instalace"><h2>1 · Instalace Anki (zdarma)</h2>
+<div class="grid"><div class="panel"><h3>💻 PC / Mac</h3><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Stáhni Anki</h3><p>Jdi na <a href="https://apps.ankiweb.net" target="_blank" rel="noopener noreferrer">apps.ankiweb.net ↗</a> a klikni na <b>Download</b>. Vyber Windows nebo macOS.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>apps.ankiweb.net</span></div><div class="mbody"><div class="mweb"><b>Anki</b><p>powerful, intelligent flash cards</p><span class="mbtn hl">Download</span></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Nainstaluj</h3><p>Otevři stažený soubor a projdi instalací (na Macu přetáhni Anki do Aplikací).</p></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Spusť Anki</h3><p>Při prvním spuštění vyber jazyk (klidně čeština). Hotovo – vidíš seznam balíčků (Decks).</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Anki</span></div><div class="mbody"><div class="mtool"><span>Decks</span><span>Add</span><span>Browse</span><span>Stats</span><span class="sy">⟳ Sync</span></div><div class="mdeck"><div>Default <em>0</em></div></div></div></figure></div></li>
+</ol></div>
+<div class="panel"><h3>🤖 Android – AnkiDroid</h3><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Google Play</h3><p>V Obchodě Play vyhledej <b>AnkiDroid Flashcards</b> a nainstaluj. Je zdarma a od komunity kolem Anki.</p><figure class="mock phone" aria-hidden="true"><div class="pnotch"></div><div class="mbody"><div class="mweb"><b>AnkiDroid Flashcards</b><p>AnkiDroid Open Source Team</p><span class="mbtn hl">Instalovat</span></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Otevři aplikaci</h3><p>Povol přístup k souborům, pokud se zeptá. Uvidíš seznam balíčků.</p></div></li>
+</ol></div>
+<div class="panel"><h3>🍏 iPhone / iPad</h3><p>Na iPhonu/iPadu se uč přes <b>AnkiWeb v Safari</b> – zdarma: otevři <a href="https://ankiweb.net" target="_blank" rel="noopener noreferrer">ankiweb.net ↗</a>, přihlas se a dej <b>Decks → Study</b>. Tip: Sdílet → <b>Přidat na plochu</b>, ať to máš jako ikonku. Balíčky ale musíš nejdřív dostat na AnkiWeb z počítače nebo AnkiDroidu (krok 2 a 3).</p></div></div>
+</section>
+
+<section id="sync"><h2>2 · Nastavení synchronizace (AnkiWeb)</h2>
+<div class="panel"><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Založ si účet</h3><p>Na <a href="https://ankiweb.net" target="_blank" rel="noopener noreferrer">ankiweb.net ↗</a> klikni na <b>Sign Up</b>, zadej e-mail a heslo, potvrď e-mail.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>ankiweb.net</span></div><div class="mbody"><div class="mweb"><b>AnkiWeb</b><p>Log In · <span class="hl2">Sign Up</span></p></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Klikni na Sync v Anki</h3><p>V Anki na počítači klikni vpravo nahoře na <b>Sync</b> (nebo klávesa <kbd>Y</kbd>). Zadej svůj AnkiWeb e-mail a heslo.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Anki</span></div><div class="mbody"><div class="mtool"><span>Decks</span><span>Add</span><span>Browse</span><span>Stats</span><span class="sy hl">⟳ Sync</span></div><div class="mdlg"><b>AnkiWeb ID</b><div class="minp">tvuj@email.cz</div><b>Password</b><div class="minp">••••••••</div><span class="mbtn hl">OK</span></div></div></figure></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Upload nebo Download?</h3><p>Při první synchronizaci se Anki zeptá. Máš karty v počítači a AnkiWeb je prázdný → <b>Upload</b>. Máš karty na AnkiWebu a v zařízení nic → <b>Download</b>.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Anki</span></div><div class="mbody"><div class="mdlg"><p>Your collection is in a state where it needs to be uploaded or downloaded…</p><div class="row"><span class="mbtn hl">Upload to AnkiWeb</span><span class="mbtn">Download from AnkiWeb</span></div></div></div></figure></div></li>
+<li class="step"><div class="sn">4</div><div class="st"><h3>AnkiDroid</h3><p>V AnkiDroidu klepni na ikonu synchronizace (⟳ nahoře) a přihlas se stejným účtem. Pak stačí po učení vždycky dát Sync.</p></div></li>
+</ol></div></section>
+
+<section id="import"><h2>3 · Import staženého balíčku (.apkg)</h2>
+<div class="grid"><div class="panel"><h3>💻 PC / Mac</h3><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Stáhni balíček</h3><p>Na stránce <a href="../anki.html#balicky">Anki</a> klikni na <b>⬇ .apkg</b>.</p></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Dvojklik nebo File → Import…</h3><p>Na stažený soubor dvojklikni – otevře se v Anki. Nebo v Anki <b>File → Import…</b> (Soubor → Importovat…) a vyber soubor.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Anki</span></div><div class="mbody"><div class="mmenu"><span class="hl">File</span><span>Edit</span><span>View</span><span>Tools</span><span>Help</span></div><div class="mdrop m-File"><div>Switch Profile</div><div class="hl">Import…</div><div>Export…</div><div>Exit</div></div></div></figure></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Potvrď import</h3><p>Nech <b>Import any learning progress</b> vypnuté (začneš od nuly) a klikni na <b>Import</b>. Balíček se objeví v seznamu.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Import</span></div><div class="mbody"><div class="mdlg"><div class="mchk">☐ Import any learning progress</div><span class="mbtn hl">Import</span></div></div></figure></div></li>
+<li class="step"><div class="sn">4</div><div class="st"><h3>Sync</h3><p>Klikni na <b>Sync</b> – balíček se nahraje na AnkiWeb, takže ho uvidíš i v Safari na iPhonu/iPadu a v AnkiDroidu.</p></div></li>
+</ol></div>
+<div class="panel"><h3>🤖 AnkiDroid</h3><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Stáhni .apkg v telefonu</h3><p>Otevři tenhle web v telefonu a stáhni balíček.</p></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Otevři soubor</h3><p>Klepni na stažený soubor v oznámení / ve Stažených a vyber <b>AnkiDroid</b>. Nebo v AnkiDroidu ⋮ → <b>Import</b> a vyber soubor.</p><figure class="mock phone" aria-hidden="true"><div class="pnotch"></div><div class="mbody"><div class="mdrop dd"><div>Check database</div><div class="hl">Import</div><div>Export collection</div></div></div></figure></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Potvrď</h3><p>Klepni na <b>Add</b>/<b>Import</b>. Hotovo.</p></div></li>
+</ol></div>
+<div class="panel"><h3>🍏 iPhone / iPad</h3><p>Soubor .apkg v iPhonu bez placené aplikace neotevřeš. Postup: naimportuj ho na <b>počítači</b> nebo v AnkiDroidu, dej <b>Sync</b> a pak se uč na <a href="https://ankiweb.net" target="_blank" rel="noopener noreferrer">ankiweb.net ↗</a> v Safari.</p></div></div>
+</section>
+
+<section id="doplnky"><h2>4 · Instalace doplňku podle kódu</h2>
+<div class="panel"><p class="sub">Jen Anki na PC/Macu. Kódy najdeš na stránce <a href="../anki.html#doplnky">Doplňky, které používám</a>.</p><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Tools → Add-ons</h3><p>V horním menu klikni na <b>Tools → Add-ons</b> (Nástroje → Doplňky). Na Macu je menu nahoře na liště obrazovky.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Anki</span></div><div class="mbody"><div class="mmenu"><span>File</span><span>Edit</span><span>View</span><span class="hl">Tools</span><span>Help</span></div><div class="mdrop m-Tools"><div>Create Filtered Deck…</div><div>Check Database</div><div>Check Media…</div><div class="hl">Add-ons</div><div>Manage Note Types</div><div>Preferences…</div></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Get Add-ons…</h3><p>V okně doplňků klikni vpravo na <b>Get Add-ons…</b> (Získat doplňky…).</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Add-ons</span></div><div class="mbody"><div class="maddons"><div class="mlist"><div>Review Heatmap</div><div>…</div></div><div class="mside"><span class="mbtn hl">Get Add-ons…</span><span class="mbtn">Install from file…</span><span class="mbtn">Config</span><span class="mbtn">Delete</span></div></div></div></figure></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Vlož kód</h3><p>Do pole <b>Code</b> vlož kód doplňku (třeba <b>1771074083</b>) a dej <b>OK</b>.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Install Add-on</span></div><div class="mbody"><div class="mdlg"><p>To browse add-ons, please click the browse button below. When you've found an add-on you like, please paste its code below.</p><b>Code:</b><div class="minp hl3">1771074083</div><div class="row"><span class="mbtn">Browse Add-ons</span><span class="mbtn hl">OK</span></div></div></div></figure></div></li>
+<li class="step"><div class="sn">4</div><div class="st"><h3>Restartuj Anki</h3><p>Anki napíše, že se doplněk stáhl. Zavři a znovu otevři Anki – teprve pak začne fungovat.</p></div></li>
+</ol></div></section>
+
+<section><h2>🎓 Další zdroje</h2><div class="panel"><ul class="links">
+<li><a href="https://docs.ankiweb.net/getting-started.html" target="_blank" rel="noopener noreferrer">Oficiální manuál – Getting Started ↗</a> <span class="sub">(anglicky, základní pojmy)</span></li>
+<li><a href="https://docs.ankiweb.net/syncing.html" target="_blank" rel="noopener noreferrer">Oficiální manuál – Syncing with AnkiWeb ↗</a></li>
+<li><a href="https://docs.ankiweb.net/addons.html" target="_blank" rel="noopener noreferrer">Oficiální manuál – Add-ons ↗</a></li>
+</ul></div></section>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b><img class="flogo" src="../logo.svg" alt="" width="18" height="18"> Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="../index.html">Domů</a><a href="../lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="../anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="../o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

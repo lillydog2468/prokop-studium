@@ -1,0 +1,3 @@
+(function(){var B=document.querySelectorAll('[data-staff-file]');[].forEach.call(B,function(a){a.addEventListener('click',function(ev){ev.preventDefault();var sb=window.sbClient;if(!sb)return;var t=a.textContent;a.textContent='Stahuji…';
+ sb.storage.from('staff').download(a.getAttribute('data-staff-file')).then(function(r){a.textContent=t;if(r.error||!r.data){alert('Stažení se nepovedlo – soubor je jen pro moderátory a správce.');return}
+ var u=URL.createObjectURL(r.data),x=document.createElement('a');x.href=u;x.download=a.getAttribute('data-name')||'soubor';document.body.appendChild(x);x.click();setTimeout(function(){URL.revokeObjectURL(u);x.remove()},2000)})})})})();

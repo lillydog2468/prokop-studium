@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="cs" class="gated">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<script src="theme.js"></script>
+<title>Nástroje – Studovna FBMI</title>
+<meta name="description" content="Pomodoro, studijní série, denní cíl a termíny.">
+<link rel="stylesheet" href="../auth.css"><style id="agate">html.gated body{visibility:hidden}#hubback .uauth{display:inline-flex;margin-left:4px}#hubback .uauth .uemail{display:none}#hubback .uauth a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px}</style>
+<script src="../supabase.js"></script>
+<script src="../auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-staff data-base="../"></script>
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="../index.html"><span class="logo"><img src="../logo.svg" alt="" width="38" height="38"></span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="../index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="../lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="tahak-latina.html"><span aria-hidden="true">📜</span> Tahák</a><a href="../anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html" class="on" aria-current="page"><span aria-hidden="true">🧰</span> Nástroje</a><a href="../o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="phead"><h1>🧰 Nástroje</h1><p class="sub">Pomodoro, denní cíl a termíny. Všechno se ukládá jen v tomhle prohlížeči. Hledání v lekcích a pojmech najdeš na stránce <a href="../lekce.html">Lekce</a>.</p>
+<div class="subnav"><a href="#pomo">🍅 Pomodoro</a><a href="#today">🔥 Série</a><a href="#terms">📅 Termíny</a><a href="../lekce.html">🔎 Hledání</a><a href="#backup">💾 Záloha</a></div></div>
+<div class="grid">
+    <section class="panel" id="pomo">
+      <h3>🍅 Pomodoro</h3>
+      <div class="chips" id="pmodes"></div>
+      <div class="timer" id="ptime">25:00</div>
+      <div class="btns"><button class="pri" id="pgo">▶ Start</button><button id="preset">↺ Reset</button></div>
+      <p class="sub" style="text-align:center;margin:8px 0 0" id="pinfo">Dnes 0 pomodor</p>
+    </section>
+    <section class="panel" id="today">
+      <h3>🔥 Studijní série</h3>
+      <div class="row"><div class="big" id="streakN">0</div><div class="grow">dní v řadě<br><span class="sub" id="goalTxt"></span></div></div>
+      <div class="bar" style="margin:8px 0"><i id="goalBar"></i></div>
+      <div class="streak" id="week"></div>
+      <div class="row"><label class="sub grow" for="goal">Denní cíl (minut):</label><select id="goal" style="width:90px"><option>15</option><option>25</option><option>50</option><option>75</option><option>100</option></select></div>
+      <p class="sub" style="margin:8px 0 0">Počítají se minuty z dokončených pomodor.</p>
+    </section>
+    <section class="panel" id="terms">
+      <h3>📅 Rozvrh &amp; termíny</h3>
+      <ul class="dl" id="dl"></ul>
+      <form id="dform" class="row" style="flex-wrap:wrap" autocomplete="off">
+        <input id="dtitle" class="grow" placeholder="Co (zápočet, test…)" required style="min-width:150px">
+        <input id="ddate" type="date" required style="width:auto">
+        <button class="pri" type="submit">Přidat</button>
+      </form>
+      <p class="sub" style="margin:8px 0 0">Ukládá se jen v tomhle prohlížeči. Položky „příklad“ klidně smaž.</p>
+    </section>
+    <section class="panel" id="backup">
+      <h3>💾 Záloha postupu</h3>
+      <p class="sub">Postup v lekcích, série i termíny jsou jen v tomhle prohlížeči. Před změnou telefonu/prohlížeče si udělej zálohu a pak ji obnov.</p>
+      <div class="btns left"><button id="exp">⬇ Stáhnout zálohu</button><button id="imp">⬆ Obnovit zálohu</button><input type="file" id="impf" accept="application/json" hidden></div>
+    </section>
+</div>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b><img class="flogo" src="../logo.svg" alt="" width="18" height="18"> Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="../index.html">Domů</a><a href="../lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="../anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="../o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

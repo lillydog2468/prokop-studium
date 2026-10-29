@@ -1,0 +1,45 @@
+/* Tematické vzhledy sekcí – generuje site-gen.js (body.t-*) */
+.thero{position:relative;display:flex;gap:18px;align-items:center;border-radius:22px;padding:24px 22px;margin:4px 0 14px;color:#fff;box-shadow:var(--sh);overflow:hidden}
+.thero h1{margin:0 0 6px;color:#fff;font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.15}.thero p{margin:0;color:rgba(255,255,255,.92)}
+.thero .tlogo{flex:none;width:72px;height:72px;border-radius:18px;display:grid;place-items:center;font-size:40px;background:rgba(255,255,255,.12)}
+.thero .tlogo img{width:56px;height:56px;display:block}
+.thero a{color:#fff}.thero .back{color:rgba(255,255,255,.85)}
+@media (max-width:600px){.thero{padding:18px 16px;gap:12px}.thero .tlogo{width:54px;height:54px;font-size:30px}.thero .tlogo img{width:42px;height:42px}}
+
+/* Obsidian – fialová na tmavé */
+body.t-obs{--acc:#7c3aed;--acc2:#a78bfa;--lat:#7c3aed}
+[data-theme=dark] body.t-obs{--bg:#1e1e1e;--card:#262626;--ink:#dcddde;--mut:#a3a3a3;--acc:#a88bfa;--acc2:#c4b5fd;--line:#363636;--lat:#a88bfa}
+body.t-obs .hero,body.t-obs .thero{background:radial-gradient(120% 140% at 0% 0%,#4c1d95 0%,#2e1065 45%,#1e1e1e 100%);border:1px solid #3b2a6b}
+body.t-obs .hero .btn.pri{background:#7c3aed;border-color:#7c3aed;color:#fff}
+body.t-obs .hero .btn:not(.pri){background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:#fff}
+body.t-obs .ohead{display:flex;gap:16px;align-items:center}body.t-obs .ohead img{width:64px;height:64px;flex:none}
+@media (max-width:600px){body.t-obs .ohead img{width:48px;height:48px}}
+body.t-obs .logo{background:linear-gradient(135deg,#7c3aed,#4c1d95)}
+body.t-obs .sn{background:#7c3aed}[data-theme=dark] body.t-obs .sn{background:#8b5cf6}
+body.t-obs a{color:#6d28d9}[data-theme=dark] body.t-obs a{color:#b69cff}
+body.t-obs .hero a,body.t-obs #menu a.on{color:#fff}
+
+/* Anki – modrá */
+body.t-anki{--acc:#1d6fd1;--acc2:#e08a3c}
+[data-theme=dark] body.t-anki{--acc:#6aa8f0;--bg:#121822;--card:#1a2230;--line:#2a3547}
+body.t-anki .thero{background:linear-gradient(135deg,#0b4ea2,#2a8bf2)}
+body.t-anki .logo{background:linear-gradient(135deg,#1d6fd1,#0b4ea2)}
+body.t-anki .thero .tlogo{background:#fff}
+body.t-anki #menu a.on,body.t-anki .btn.pri{color:#fff}
+
+/* Latina – antika: terakota, zlatá, patkové nadpisy */
+body.t-lat{--acc:#8b2318;--acc2:#a8780f;--lat:#8b2318;--bg:#f7f1e3;--line:#e3d6bb}
+[data-theme=dark] body.t-lat{--acc:#e0866f;--acc2:#e3b34c;--lat:#e0866f;--bg:#1a1512;--card:#241d18;--line:#3a2f26}
+body.t-lat h1,body.t-lat h2,body.t-lat h3{font-family:Georgia,"Times New Roman",serif}
+body.t-lat .thero{background:linear-gradient(135deg,#6e1a12,#a33a22 60%,#7a4a10);border-bottom:4px solid #c9a227}
+body.t-lat .thero h1{letter-spacing:.02em}
+body.t-lat .logo{background:linear-gradient(135deg,#8b2318,#c9a227)}
+body.t-lat #menu a.on{color:#fff}
+
+/* Domů / Lekce – dlaždice a karty podle tématu */
+.tile[href*="obsidian"]{border-top:4px solid #7c3aed}.tile[href*="anki"]{border-top:4px solid #1d6fd1}
+.tile[href*="Latina"],.tile[href*="tahak"]{border-top:4px solid #a33a22}.tile[href*="Anatomie"]{border-top:4px solid #0f766e}
+.tile[href*="nastroje"]{border-top:4px solid #e08a3c}
+.card .tag{border-left:4px solid #0f766e;padding-left:7px}.card .tag.lat{border-left-color:#a33a22;color:#a33a22}
+[data-theme=dark] .card .tag.lat{color:#e0866f}
+@media print{.thero{background:none!important;color:#000;box-shadow:none;border:0}.thero h1,.thero p{color:#000}}

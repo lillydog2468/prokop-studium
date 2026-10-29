@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="cs" class="gated">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<script src="theme.js"></script>
+<title>Obsidian – Studovna FBMI</title>
+<meta name="description" content="Návod na Obsidian pro studenty fyzioterapie a startovací studijní vault ke stažení.">
+<link rel="stylesheet" href="../auth.css"><style id="agate">html.gated body{visibility:hidden}#hubback .uauth{display:inline-flex;margin-left:4px}#hubback .uauth .uemail{display:none}#hubback .uauth a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px}</style>
+<script src="../supabase.js"></script>
+<script src="../auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-staff data-base="../"></script>
+</head>
+<body class="t-obs">
+<header class="nav"><div class="navin">
+  <a class="brand" href="../index.html"><span class="logo"><img src="../logo.svg" alt="" width="38" height="38"></span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="../index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="../lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="tahak-latina.html"><span aria-hidden="true">📜</span> Tahák</a><a href="../anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="obsidian.html" class="on" aria-current="page"><span aria-hidden="true">🪨</span> Obsidian</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="../o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+<style>
+a.zoom{display:block;cursor:zoom-in}a.zoom img{display:block}.zhint{font-weight:600}
+#lb{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+#lb[hidden]{display:none}#lb img{width:min(88vw,1100px);max-height:88vh;object-fit:contain;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);background:#fff}
+#lb button{position:absolute;top:calc(10px + env(safe-area-inset-top));right:12px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#111;font-size:20px;cursor:pointer}
+@media (max-width:600px){#lb{padding:8px}#lb img{width:96vw}}
+</style>
+<section class="hero"><div class="ohead"><img src="obsidian/obsidian-logo.svg" alt="Logo Obsidian" width="64" height="64"><h1>Obsidian – poznámky, které spolu souvisí</h1></div><p>Obsidian je zdarma aplikace na poznámky v obyčejných textových souborech (Markdown). Poznámky propojuješ odkazy, takže z anatomie skočíš do latiny jedním klikem. Funguje na PC, Macu, iPhonu i Androidu – a offline.</p><a class="btn pri" href="#" data-staff-file="obsidian/Studijni-vault-starter.zip" data-name="Studijni-vault-starter.zip">⬇ Stáhnout startovací vault (ZIP)</a> <a class="btn" href="#navod">🧭 Návod krok za krokem</a></section>
+<div class="subnav"><a href="#navod">1 · Instalace</a><a href="#vault">2 · Vault</a><a href="#sync">3 · iPhone/iPad</a><a href="#pluginy">4 · Pluginy</a><a href="#sablony">5 · Šablony</a><a href="#odkazy">6 · Propojování</a><a href="#ukazky">Jak to vypadá</a><a href="#stahnout">Stáhnout</a></div>
+<p class="sub">Obrázky jsou zjednodušené nákresy – skutečné okno vypadá trochu jinak, ale názvy menu sedí (anglicky, v závorce česky). Podle <a href="https://help.obsidian.md" target="_blank" rel="noopener noreferrer">oficiální nápovědy Obsidianu ↗</a>.</p>
+
+<section id="navod"><h2>1 · Instalace (zdarma)</h2><div class="panel"><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Stáhni Obsidian</h3><p>Na <a href="https://obsidian.md/download" target="_blank" rel="noopener noreferrer">obsidian.md ↗</a> stáhni verzi pro Windows / macOS. Na iPhonu a Androidu hledej <b>Obsidian</b> v App Store / Google Play. Pro osobní použití i studium je zdarma.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>obsidian.md</span></div><div class="mbody"><div class="mweb"><b>Obsidian</b><p>Sharpen your thinking.</p><span class="mbtn hl">Download</span></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Nainstaluj a spusť</h3><p>Otevři stažený instalátor. Při prvním spuštění uvidíš úvodní okno s volbou trezoru (vault).</p></div></li>
+</ol></div></section>
+
+<section id="vault"><h2>2 · Vytvoř nebo otevři vault</h2><div class="panel"><p><b>Vault</b> (trezor) = obyčejná složka v počítači, kde leží všechny tvoje poznámky.</p><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Nejrychleji: náš startovací vault</h3><p>Stáhni <a href="#" data-staff-file="obsidian/Studijni-vault-starter.zip" data-name="Studijni-vault-starter.zip">ZIP níže</a>, rozbal ho a v Obsidianu klikni na <b>Open folder as vault</b> (Otevřít složku jako trezor). Vyber rozbalenou složku.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Obsidian</span></div><div class="mbody"><div class="mweb"><b>Obsidian</b><p>Create new vault · <span class="hl2">Open folder as vault</span> · Open vault from Obsidian Sync</p></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Nebo úplně od nuly</h3><p><b>Create new vault</b> → zadej název (třeba „Studium“) → vyber umístění → <b>Create</b>.</p></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Přepínání vaultů</h3><p>Vlevo dole klikni na název vaultu → <b>Manage vaults…</b> (vault switcher).</p></div></li>
+</ol></div></section>
+
+<section id="sync"><h2>3 · Sync na iPhone / iPad</h2><div class="grid">
+<div class="panel"><h3>🍏 iCloud (zdarma)</h3><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Zapni iCloud Drive</h3><p>iPhone: <b>Nastavení → [tvoje jméno] → iCloud → iCloud Drive</b>.</p></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Založ vault v iCloudu</h3><p>V Obsidianu na iPhonu: <b>Create new vault</b> → název → zapni <b>Store in iCloud</b> → <b>Create</b>.</p><figure class="mock phone" aria-hidden="true"><div class="pnotch"></div><div class="mbody"><div class="mweb"><b>Create new vault</b><p>Vault name: Studium</p><p>Store in iCloud <span class="hl2">● ON</span></p><span class="mbtn hl">Create</span></div></div></figure></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Správná složka</h3><p>Vault musí ležet v <b>iCloud Drive → Obsidian</b> (složka s ikonkou Obsidianu). Startovací vault tam z Macu nebo přes aplikaci Soubory jednoduše nakopíruj.</p></div></li>
+<li class="step"><div class="sn">4</div><div class="st"><h3>Mac</h3><p>Na Macu: <b>Open folder as vault</b> → iCloud Drive → Obsidian. Tip: na složce Obsidian dej <b>Keep Downloaded</b>.</p></div></li>
+</ol></div>
+<div class="panel"><h3>🔁 Alternativy</h3><ul>
+<li><b>Obsidian Sync</b> – oficiální placený sync, funguje všude (Windows, Mac, iPhone, Android) a nejspolehlivěji.</li>
+<li><b>Windows + iPhone:</b> oficiální nápověda varuje, že iCloud na Windows může dělat duplicity nebo poškodit soubory – počítej s tím, nebo zvaž Obsidian Sync.</li>
+<li><b>Android / PC:</b> OneDrive, Google Drive, Syncthing nebo Git (na iPhonu oficiálně nepodporované).</li>
+<li>Nekombinuj dva synchronizační způsoby na jednom vaultu.</li></ul>
+<p class="sub">Zdroj: <a href="https://help.obsidian.md/sync-notes" target="_blank" rel="noopener noreferrer">Sync your notes across devices ↗</a></p></div>
+</div></section>
+
+<section id="pluginy"><h2>4 · Komunitní pluginy</h2><div class="panel"><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Zapni je</h3><p><b>Settings</b> (⚙️ vlevo dole) → <b>Community plugins</b> → <b>Turn on community plugins</b>.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Settings</span></div><div class="mbody"><div class="mtool"><span>General</span><span>Editor</span><span>Core plugins</span><span class="sy">Community plugins</span></div><div class="mweb"><p>Restricted mode</p><span class="mbtn hl">Turn on community plugins</span> <span class="mbtn">Browse</span></div></div></figure></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Najdi a nainstaluj</h3><p><b>Browse</b> → vyhledej název → <b>Install</b> → <b>Enable</b>.</p></div></li>
+</ol>
+<h3>Co používám já</h3><p class="sub">Popisy podle oficiálního <a href="https://obsidian.md/plugins" target="_blank" rel="noopener noreferrer">adresáře pluginů ↗</a>. ⭐ = potřebují šablony ze startovacího vaultu.</p>
+<ul class="links">
+<li>⭐ <b>Templater</b> – dynamické šablony (datum, výběr předmětu, přesun poznámky).</li>
+<li>⭐ <b>Dataview</b> – dotazy nad poznámkami: automatické seznamy přednášek a blížících se zkoušek.</li>
+<li><b>Full Calendar</b> – události a kalendář přímo v poznámkách (zkoušky v kalendáři).</li>
+<li><b>Calendar</b> – malý kalendář v postranním panelu pro procházení denních poznámek.</li>
+<li><b>Excalidraw</b> – kreslení a úpravy schémat (svaly, klouby, myšlenkové mapy).</li>
+<li><b>Kanban</b> – nástěnky úkolů uložené jako Markdown.</li>
+<li><b>Checklist</b> – všechny checklisty ze všech poznámek v jednom přehledu.</li>
+<li><b>Tag Wrangler</b> – přejmenování, slučování a hledání tagů z panelu tagů.</li>
+<li><b>Iconize</b> – ikonky ke složkám, souborům i textu.</li>
+<li><b>Attachment Management</b> – vlastní cesty pro přílohy a jejich automatické přejmenování.</li>
+<li><b>Editing Toolbar</b> – panel nástrojů pro úpravy, podobný Wordu.</li>
+<li><b>Excel</b> – tabulky (spreadsheety) vložené do poznámek.</li>
+<li><b>Book Search</b> – poznámky ke knihám s údaji např. z Google Books.</li>
+<li><b>Clipper</b> – ukládání zvýrazněných pasáží z webu.</li></ul></div></section>
+
+<section id="sablony"><h2>5 · Složka se šablonami</h2><div class="panel"><ol class="steps">
+<li class="step"><div class="sn">1</div><div class="st"><h3>Vestavěné šablony</h3><p><b>Settings → Core plugins → Templates</b> zapni, pak v nastavení <b>Templates</b> nastav <b>Template folder location</b> = <code>01 Atlas/Šablony</code>. Ve startovacím vaultu už je to nastavené.</p></div></li>
+<li class="step"><div class="sn">2</div><div class="st"><h3>Templater</h3><p>Moje šablony používají Templater: <b>Settings → Templater → Template folder location</b> = <code>01 Atlas/Šablony</code>.</p></div></li>
+<li class="step"><div class="sn">3</div><div class="st"><h3>Použití</h3><p><kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>P</kbd> (Command palette) → <b>Templater: Create new note from template</b> → vyber třeba <i>Studijní poznámka (přednáška)</i>. Zeptá se na název a předmět a založí poznámku na správném místě.</p><figure class="mock" aria-hidden="true"><div class="mbar"><i></i><i></i><i></i><span>Command palette</span></div><div class="mbody"><div class="mweb"><p>&gt; templater create</p><p><span class="hl2">Templater: Create new note from template</span></p><p>Templater: Open insert template modal</p></div></div></figure></div></li>
+</ol></div></section>
+
+<section id="odkazy"><h2>6 · Propojování poznámek</h2><div class="panel"><ul>
+<li><code>[[Svaly krku]]</code> – odkaz na poznámku. Když ještě neexistuje, kliknutím ji založíš.</li>
+<li><code>[[Svaly krku#Výpisky]]</code> – odkaz přímo na nadpis.</li>
+<li><code>![[skripta.pdf]]</code> – vloží PDF nebo obrázek přímo do poznámky.</li>
+<li><code>#anatomie</code> – tag. V pravém panelu <b>Backlinks</b> vidíš, kdo na poznámku odkazuje.</li>
+<li><b>Graph view</b> (ikonka v levém pruhu) ukáže síť všech propojení.</li></ul>
+<p class="sub">Víc: <a href="https://help.obsidian.md/links" target="_blank" rel="noopener noreferrer">Internal links ↗</a></p></div></section>
+
+<section id="ukazky"><h2>👀 Jak to může vypadat</h2><p class="sub">Ukázkové poznámky ze startovacího vaultu (nakreslené nákresy, ne snímky skutečného PC).</p>
+<div class="grid">
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-anatomie.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-anatomie.png" alt="Ukázka anatomické poznámky Svaly krku se strukturou složek" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Anatomie – tabulka svalů, klinická poznámka, odkazy na pojmy.</figcaption></figure>
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-latina.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-latina.png" alt="Ukázka poznámky z latiny – 1. deklinace" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Latina – deklinace, slovíčka a doplňovačky pro Anki.</figcaption></figure>
+<figure class="panel"><a class="zoom" href="obsidian/ukazka-slozky.png" target="_blank" rel="noopener"><img src="obsidian/ukazka-slozky.png" alt="Ukázka poznámky ze šablony Zkouška" style="width:100%;border-radius:10px" loading="lazy"></a><figcaption class="sub"><span class="zhint">🔍 Klikni pro zvětšení</span> · Šablona Zkouška – plán opakování T-14 / T-7 / T-3 / T-1.</figcaption></figure>
+</div>
+<div class="panel"><h3>📁 Struktura složek</h3><pre style="white-space:pre-wrap;margin:0">00 Inbox            ← rychlé nápady, nové poznámky
+01 Atlas/Šablony     ← šablony
+02 Studium/
+  Fyzioterapie/
+    Anatomie/  (Pojmy, Zdroje)
+    Latina/    (Slovíčka)
+    Biologie/ · Biomechanika/
+  Zkoušky/           ← 1 poznámka = 1 zkouška
+  Týdenní review/
+  materialy/         ← PDF, prezentace
+images               ← obrázky</pre></div></section>
+
+<section id="stahnout"><h2>⬇ Startovací vault</h2><div class="panel"><p><b>Studijni-vault-starter.zip</b> – složky, 4 šablony (Studijní poznámka, Zkouška, Internetové zdroje, Týdenní review), 3 ukázkové poznámky a README s návodem. Pluginy nejsou přibalené – nainstaluj si je podle kroku 4.</p><a class="btn pri" href="#" data-staff-file="obsidian/Studijni-vault-starter.zip" data-name="Studijni-vault-starter.zip">⬇ Stáhnout ZIP</a></div></section>
+
+</main>
+<footer class="foot"><div class="footin">
+  <div><b><img class="flogo" src="../logo.svg" alt="" width="18" height="18"> Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="../index.html">Domů</a><a href="../lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="../anki.html">Anki</a><a href="obsidian.html">Obsidian</a><a href="nastroje.html">Nástroje</a><a href="../o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+<script src="obsidian-lb.js"></script>
+<script src="staff-dl.js"></script>
+</body>
+</html>

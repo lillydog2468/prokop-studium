@@ -1,7 +1,7 @@
 (function(){
 var sb=window.sbClient;if(!sb)return;
 var q=new URLSearchParams(location.search),h=new URLSearchParams((window.sbInitHash||location.hash).slice(1));
-var next=q.get('next')||'index.html';if(!/^[a-z0-9-]+\.html([?#].*)?$/i.test(next))next='index.html';
+var next=q.get('next')||'index.html';if(!/^(moderatori\/)?[a-z0-9-]+\.html([?#].*)?$/i.test(next))next='index.html';
 var $=function(i){return document.getElementById(i)};
 function say(id,t,kind){var m=$(id);m.textContent=t||'';m.className='lmsg '+(kind||'');m.hidden=!t}
 function cz(err){var m=(err&&(err.code||err.message)||'')+'';
