@@ -1,1 +1,71 @@
-<!doctype html><html lang="cs"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Studijní bloky</title><body style="font-family:system-ui;max-width:600px;margin:40px auto;padding:0 16px"><h1>Studijní bloky – anatomie</h1><ul style="font-size:1.2em;line-height:2"><li><a href="svaly-hlavy-krku.html">Svaly hlavy a krku</a></li><li><a href="axialni-system.html">Axiální systém</a></li></ul></body></html>
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<title>Studovna FBMI – Fyzioterapie, 1. ročník</title>
+<meta name="description" content="Studovna pro 1. ročník fyzioterapie na FBMI ČVUT: interaktivní lekce z anatomie a latiny, flashcards, pomodoro a termíny.">
+</head>
+<body>
+<header class="top">
+  <div class="logo">🦴</div>
+  <div><h1>Studovna FBMI <span class="proto">prototyp</span></h1><div class="sub">Fyzioterapie · 1. ročník · Kladno</div></div>
+  <div class="sp"></div>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+</header>
+<main class="wrap">
+  <div class="search"><span>🔎</span><input id="q" type="search" placeholder="Hledej lekci nebo pojem (třeba „masseter“, „cor“)…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+  <div class="chips" id="chips"></div>
+  <div id="lessons"></div>
+  <div id="termhits"></div>
+
+  <h2>🧰 Nástroje</h2>
+  <div class="grid">
+    <section class="panel" id="today">
+      <h3>🔥 Studijní série</h3>
+      <div class="row"><div class="big" id="streakN">0</div><div class="grow">dní v řadě<br><span class="sub" id="goalTxt"></span></div></div>
+      <div class="bar" style="margin:8px 0"><i id="goalBar"></i></div>
+      <div class="streak" id="week"></div>
+      <div class="row"><label class="sub grow" for="goal">Denní cíl (minut):</label><select id="goal" style="width:90px"><option>15</option><option>25</option><option>50</option><option>75</option><option>100</option></select></div>
+      <p class="sub" style="margin:8px 0 0">Počítají se minuty z pomodora a projeté kartičky (1 kartička ≈ ½ min).</p>
+    </section>
+    <section class="panel" id="pomo">
+      <h3>🍅 Pomodoro</h3>
+      <div class="chips" id="pmodes"></div>
+      <div class="timer" id="ptime">25:00</div>
+      <div class="btns"><button class="pri" id="pgo">▶ Start</button><button id="preset">↺ Reset</button></div>
+      <p class="sub" style="text-align:center;margin:8px 0 0" id="pinfo">Dnes 0 pomodor</p>
+    </section>
+    <section class="panel" id="flash">
+      <h3>🃏 Rychlé kartičky <small class="sub" id="fcount"></small></h3>
+      <div class="row" style="gap:6px"><select id="fsrc" class="grow"></select><select id="fdir" style="width:auto"><option value="la">latina → čeština</option><option value="cz">čeština → latina</option></select></div>
+      <div class="fc" id="fc" role="button" tabindex="0" aria-label="Otočit kartičku"><div class="in"><div class="f" id="ff"></div><div class="b" id="fb"></div></div></div>
+      <div class="btns"><button id="fno">😬 Ještě ne</button><button class="pri" id="fyes">✅ Umím</button></div>
+      <p class="sub" style="text-align:center;margin:8px 0 0" id="fstat">Ťukni na kartičku pro otočení.</p>
+    </section>
+    <section class="panel" id="terms">
+      <h3>📅 Rozvrh &amp; termíny</h3>
+      <ul class="dl" id="dl"></ul>
+      <form id="dform" class="row" style="flex-wrap:wrap" autocomplete="off">
+        <input id="dtitle" class="grow" placeholder="Co (zápočet, test…)" required style="min-width:150px">
+        <input id="ddate" type="date" required style="width:auto">
+        <button class="pri" type="submit">Přidat</button>
+      </form>
+      <p class="sub" style="margin:8px 0 0">Ukládá se jen v tomhle prohlížeči. Položky „příklad“ klidně smaž.</p>
+    </section>
+  </div>
+</main>
+<footer>Studovna FBMI · prototyp · bez přihlašování, bez sledování – postup se ukládá jen ve tvém zařízení (localStorage).<br><button id="exp" style="margin-top:8px;min-height:32px;font-size:.8rem">⬇ Záloha postupu</button> <button id="imp" style="margin-top:8px;min-height:32px;font-size:.8rem">⬆ Obnovit zálohu</button><input type="file" id="impf" accept="application/json" hidden></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
