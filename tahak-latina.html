@@ -43,8 +43,13 @@ body.quiz .e.rev{color:var(--acc2);background:transparent;padding:0}
 .wl{line-height:1.9}.wh{display:block;color:var(--lat)}.w{display:inline;margin-right:4px}.w::after{content:' ·';color:var(--mut)}
 .hid{display:none!important}mark{background:#ffe58a;color:#000;border-radius:3px}
 .fix{font-size:.85rem;color:var(--mut)}#nohit{display:none}
+#tq{font-size:16px}#tres{flex:1 1 100%;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);max-height:45vh;overflow:auto;-webkit-overflow-scrolling:touch}
+#tres .rh{padding:6px 12px;font-size:.85rem;color:var(--mut);border-bottom:1px solid var(--line)}#tres ol{list-style:none;margin:0;padding:0}
+#tres button.r{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:8px 12px;color:inherit;font:inherit;white-space:normal;cursor:pointer;min-height:0}
+#tres button.r:hover,#tres button.r:focus{background:rgba(31,111,92,.09)}#tres .rl{font-style:italic;font-weight:600;color:var(--lat)}#tres .rm{color:var(--mut);font-size:.85rem}
+.flash{outline:3px solid var(--acc2);outline-offset:2px;border-radius:4px;transition:outline-color 1.5s}
 @media (max-width:600px){.tbar{position:static!important;gap:6px}.tbar button{font-size:.85rem;padding:6px 9px;min-height:36px}table{font-size:.85rem}th,td{padding:5px 6px}.sb{padding:0 10px 12px}details.sec>summary{padding:10px 12px}}
-@media print{header.nav,footer.foot,.tbar,.toc,#hubback{display:none!important}body{background:#fff;color:#000}details.sec{box-shadow:none;border:0;break-inside:auto}
+@media print{header.nav,footer.foot,.tbar,#tres,.toc,#hubback{display:none!important}body{background:#fff;color:#000}details.sec{box-shadow:none;border:0;break-inside:auto}
  details.sec>summary::before{content:''}.e{color:#000!important;background:none!important}th{background:#eee}table{font-size:9.5pt}.tw{overflow:visible}h3,h4{break-after:avoid}tr{break-inside:avoid}.wrap{max-width:none;padding:0}}
 </style>
 <div class="phead tt"><h1>📜 Tahák – latina</h1><p class="sub">Deklinace 1.–5., koncovky, kmen, genitiv ve slovníku, přídavná jména a shoda – lékařská latina, lekce 1–6. Koncovky jsou <span class="e">zvýrazněné</span>.</p></div>
@@ -52,6 +57,7 @@ body.quiz .e.rev{color:var(--acc2);background:transparent;padding:0}
  <div class="search"><span>🔎</span><input id="tq" type="search" placeholder="Hledej slovo nebo koncovku (např. „gaster“, „-ium“)…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Hledat v taháku"></div>
  <button id="tquiz" aria-pressed="false" title="Schová koncovky v tabulkách – klepnutím odkryješ">🙈 Skrýt koncovky</button>
  <button id="topen">⊕ Rozbalit vše</button><button id="tclose">⊖ Sbalit vše</button><button id="tprint">🖨️ Tisk</button>
+ <div id="tres" class="hid" aria-live="polite"></div>
 </div>
 <div class="toc"><a href="#0-zakladni-pojmy">0. Základní pojmy</a><a href="#1-jak-poznat-deklinaci-podle-genitivu-sg">1. Jak poznat deklinaci – podle GENITIVU sg.</a><a href="#2-koncovky-nominativ-a-genitiv">2. Koncovky – nominativ a genitiv</a><a href="#2b-plne-vzory-sklonovani-sg-pl">2b. Plné vzory skloňování (sg. | pl.)</a><a href="#3-rod-orientacni-pravidla-a-caste-vyjimky">3. Rod – orientační pravidla a časté výjimky</a><a href="#4-shoda-pridavneho-jmena-s-podstatnym-jmenem">4. Shoda přídavného jména s podstatným jménem</a><a href="#4b-obecna-pravidla-plati-napric-deklinacemi">4b. Obecná pravidla (platí napříč deklinacemi)</a><a href="#5-genitiv-v-lekarskych-terminech-priklady-z-lekci">5. Genitiv v lékařských termínech (příklady z lekcí)</a><a href="#6-vsechna-podstatna-jmena-z-lekci-1-6-podle-deklinace">6. Všechna podstatná jména z lekcí 1–6 podle deklinace</a></div>
 <p id="nohit" class="panel note">Nic nenalezeno.</p>
