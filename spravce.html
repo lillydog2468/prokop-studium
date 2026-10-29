@@ -29,14 +29,14 @@
 <main class="wrap">
 
 <div class="lwrap awrap">
-<h1 class="lh1">Správa</h1><p class="sub">Jen pro správce. Obsah webu je statický na GitHub Pages – tady se spravují jen účty a PIN.</p>
+<h1 class="lh1">Správa</h1><p class="sub">Jen pro moderátory a správce. Obsah webu je statický na GitHub Pages – tady se spravují jen účty a PIN.</p><p class="sub" id="a-role"></p>
 <section class="login" aria-labelledby="ph"><h2 id="ph">PIN pro registraci</h2>
 <p class="sub">Aktuální PIN: <b id="a-pin">…</b></p>
 <form id="f-apin" novalidate><div class="pinrow"><label>Nový PIN<input id="a-newpin" type="text" inputmode="numeric" autocomplete="off" maxlength="12" required></label><button class="btn pri" type="submit">Změnit PIN</button></div></form>
 <label class="chk"><input id="a-enf" type="checkbox"> Registrace vyžaduje PIN</label>
 <p id="amsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
 <section class="login" aria-labelledby="uh2"><h2 id="uh2">Uživatelé</h2>
-<div class="atbl"><table><thead><tr><th>E-mail</th><th>Vytvořen</th><th>Role</th><th></th></tr></thead><tbody id="a-users"></tbody></table></div>
+<div class="atbl"><table><thead><tr><th>E-mail</th><th>Vytvořen</th><th>Role</th><th>Změnit roli</th></tr></thead><tbody id="a-users"></tbody></table></div>
 <p id="rmsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
 </div>
 </main>
