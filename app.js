@@ -25,7 +25,7 @@ function render(){var nq=norm(q.trim()),html='';
     if(!ls_.length)return;
     html+='<h2>'+(s==='Latina'?'🏛️':'🫀')+' '+esc(s)+' <small>'+ls_.length+' '+(ls_.length===1?'lekce':'lekce')+'</small></h2><div class="rail">';
     ls_.forEach(function(l){var p=progress(l),idx=D.lessons.indexOf(l);
-      html+='<div class="card" role="link" tabindex="0" data-href="viewer.html?l='+encodeURIComponent(l.slug)+'"><div class="tag'+(l.type==='lat'?' lat':'')+'">'+esc(l.subj)+(lastL===l.slug?' · naposledy otevřeno':'')+'</div><h3>'+esc(l.title)+'</h3><p>'+esc(l.desc)+'</p>'+
+      html+='<div class="card" role="link" tabindex="0" data-href="viewer.html?l='+encodeURIComponent(l.slug)+'"><div class="tag'+(l.type==='lat'?' lat':'')+'">'+esc(l.subj)+(l.proto?' · 🧪 prototyp':'')+(lastL===l.slug?' · naposledy otevřeno':'')+'</div><h3>'+esc(l.title)+'</h3><p>'+esc(l.desc)+'</p>'+
       '<div class="meta"><span>📑 '+l.sections+' sekcí</span><span>✏️ '+l.exercises+' cvičení</span>'+(p.time?'<span>⏱ '+Math.round(p.time/60)+' min</span>':'')+'</div>'+
       (l.anki?'<div class="meta"><a class="chip" style="min-height:30px;display:inline-flex;align-items:center;text-decoration:none" href="'+l.anki.file+'" download data-dl="1">⬇ Balíček .apkg</a><span>🧠 '+l.anki.cards+' karet · '+l.anki.mb+' MB</span></div>':'')+'<div class="bar"><i style="width:'+p.pct+'%"></i></div><div class="row"><span class="sub grow">'+(p.manual?'✅ označeno jako hotovo':p.done+'/'+p.total+' cvičení · '+p.pct+' %')+'</span><button class="chip" data-done="'+idx+'" style="min-height:30px">'+(p.manual?'↺':'✓ hotovo')+'</button></div></div>'});
     html+='</div>'});
