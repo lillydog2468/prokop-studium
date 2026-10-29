@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="themes.css">
 <script src="theme.js"></script>
 <title>Nástroje – Studovna FBMI</title>
-<meta name="description" content="Pomodoro, studijní série, denní cíl a termíny.">
+<meta name="description" content="Pomodoro na soustředění a záloha postupu.">
 </head>
 <body>
 <header class="nav"><div class="navin">
@@ -25,8 +25,8 @@
 </div></header>
 <main class="wrap">
 
-<div class="phead"><h1>🧰 Nástroje</h1><p class="sub">Pomodoro, denní cíl a termíny. Všechno se ukládá jen v tomhle prohlížeči. Hledání v lekcích a pojmech najdeš na stránce <a href="lekce.html">Lekce</a>.</p>
-<div class="subnav"><a href="#pomo">🍅 Pomodoro</a><a href="#today">🔥 Série</a><a href="#terms">📅 Termíny</a><a href="lekce.html">🔎 Hledání</a><a href="#backup">💾 Záloha</a></div></div>
+<div class="phead"><h1>🧰 Nástroje</h1><p class="sub">Pomodoro a záloha postupu. Všechno se ukládá jen v tomhle prohlížeči. Hledání v lekcích a pojmech najdeš na stránce <a href="lekce.html">Lekce</a>.</p>
+<div class="subnav"><a href="#pomo">🍅 Pomodoro</a><a href="lekce.html">🔎 Hledání</a><a href="#backup">💾 Záloha</a></div></div>
 <div class="grid">
     <section class="panel" id="pomo">
       <h3>🍅 Pomodoro</h3>
@@ -35,27 +35,9 @@
       <div class="btns"><button class="pri" id="pgo">▶ Start</button><button id="preset">↺ Reset</button></div>
       <p class="sub" style="text-align:center;margin:8px 0 0" id="pinfo">Dnes 0 pomodor</p>
     </section>
-    <section class="panel" id="today">
-      <h3>🔥 Studijní série</h3>
-      <div class="row"><div class="big" id="streakN">0</div><div class="grow">dní v řadě<br><span class="sub" id="goalTxt"></span></div></div>
-      <div class="bar" style="margin:8px 0"><i id="goalBar"></i></div>
-      <div class="streak" id="week"></div>
-      <div class="row"><label class="sub grow" for="goal">Denní cíl (minut):</label><select id="goal" style="width:90px"><option>15</option><option>25</option><option>50</option><option>75</option><option>100</option></select></div>
-      <p class="sub" style="margin:8px 0 0">Počítají se minuty z dokončených pomodor.</p>
-    </section>
-    <section class="panel" id="terms">
-      <h3>📅 Rozvrh &amp; termíny</h3>
-      <ul class="dl" id="dl"></ul>
-      <form id="dform" class="row" style="flex-wrap:wrap" autocomplete="off">
-        <input id="dtitle" class="grow" placeholder="Co (zápočet, test…)" required style="min-width:150px">
-        <input id="ddate" type="date" required style="width:auto">
-        <button class="pri" type="submit">Přidat</button>
-      </form>
-      <p class="sub" style="margin:8px 0 0">Ukládá se jen v tomhle prohlížeči. Položky „příklad“ klidně smaž.</p>
-    </section>
     <section class="panel" id="backup">
       <h3>💾 Záloha postupu</h3>
-      <p class="sub">Postup v lekcích, série i termíny jsou jen v tomhle prohlížeči. Před změnou telefonu/prohlížeče si udělej zálohu a pak ji obnov.</p>
+      <p class="sub">Postup v lekcích je jen v tomhle prohlížeči. Před změnou telefonu/prohlížeče si udělej zálohu a pak ji obnov.</p>
       <div class="btns left"><button id="exp">⬇ Stáhnout zálohu</button><button id="imp">⬆ Obnovit zálohu</button><input type="file" id="impf" accept="application/json" hidden></div>
     </section>
 </div>
