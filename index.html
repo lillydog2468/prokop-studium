@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
 <title>Studovna FBMI – Fyzioterapie, 1. ročník</title>
-<meta name="description" content="Studovna pro 1. ročník fyzioterapie na FBMI ČVUT: interaktivní lekce z anatomie a latiny, flashcards, pomodoro a termíny.">
+<meta name="description" content="Studovna pro 1. ročník fyzioterapie na FBMI ČVUT: interaktivní lekce z anatomie a latiny, Anki balíčky, pomodoro a termíny.">
 </head>
 <body>
 <header class="top">
@@ -36,7 +36,7 @@
       <div class="bar" style="margin:8px 0"><i id="goalBar"></i></div>
       <div class="streak" id="week"></div>
       <div class="row"><label class="sub grow" for="goal">Denní cíl (minut):</label><select id="goal" style="width:90px"><option>15</option><option>25</option><option>50</option><option>75</option><option>100</option></select></div>
-      <p class="sub" style="margin:8px 0 0">Počítají se minuty z pomodora a projeté kartičky (1 kartička ≈ ½ min).</p>
+      <p class="sub" style="margin:8px 0 0">Počítají se minuty z dokončených pomodor.</p>
     </section>
     <section class="panel" id="pomo">
       <h3>🍅 Pomodoro</h3>
@@ -45,12 +45,10 @@
       <div class="btns"><button class="pri" id="pgo">▶ Start</button><button id="preset">↺ Reset</button></div>
       <p class="sub" style="text-align:center;margin:8px 0 0" id="pinfo">Dnes 0 pomodor</p>
     </section>
-    <section class="panel" id="flash">
-      <h3>🃏 Rychlé kartičky <small class="sub" id="fcount"></small></h3>
-      <div class="row" style="gap:6px"><select id="fsrc" class="grow"></select><select id="fdir" style="width:auto"><option value="la">latina → čeština</option><option value="cz">čeština → latina</option></select></div>
-      <div class="fc" id="fc" role="button" tabindex="0" aria-label="Otočit kartičku"><div class="in"><div class="f" id="ff"></div><div class="b" id="fb"></div></div></div>
-      <div class="btns"><button id="fno">😬 Ještě ne</button><button class="pri" id="fyes">✅ Umím</button></div>
-      <p class="sub" style="text-align:center;margin:8px 0 0" id="fstat">Ťukni na kartičku pro otočení.</p>
+    <section class="panel" id="anki">
+      <h3>🧠 Anki balíčky</h3>
+      <ul class="dl" id="ankil"></ul>
+      <p class="sub" style="margin:8px 0 0"><b>Jak importovat (zdarma):</b> Anki na PC/Macu → stáhni a dvojklik na soubor .apkg · AnkiDroid → otevři stažený soubor (nebo Import) · AnkiWeb → naimportuj na PC a dej Sync, pak se to objeví i na webu. Balíčky jsou bez cizí historie opakování – začínáš od nuly.</p>
     </section>
     <section class="panel" id="terms">
       <h3>📅 Rozvrh &amp; termíny</h3>

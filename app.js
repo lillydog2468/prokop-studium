@@ -25,15 +25,15 @@ function render(){var nq=norm(q.trim()),html='';
     if(!ls_.length)return;
     html+='<h2>'+(s==='Latina'?'🏛️':'🫀')+' '+esc(s)+' <small>'+ls_.length+' '+(ls_.length===1?'lekce':'lekce')+'</small></h2><div class="rail">';
     ls_.forEach(function(l){var p=progress(l),idx=D.lessons.indexOf(l);
-      html+='<a class="card" href="viewer.html?l='+encodeURIComponent(l.slug)+'"><div class="tag'+(l.type==='lat'?' lat':'')+'">'+esc(l.subj)+(lastL===l.slug?' · naposledy otevřeno':'')+'</div><h3>'+esc(l.title)+'</h3><p>'+esc(l.desc)+'</p>'+
+      html+='<div class="card" role="link" tabindex="0" data-href="viewer.html?l='+encodeURIComponent(l.slug)+'"><div class="tag'+(l.type==='lat'?' lat':'')+'">'+esc(l.subj)+(lastL===l.slug?' · naposledy otevřeno':'')+'</div><h3>'+esc(l.title)+'</h3><p>'+esc(l.desc)+'</p>'+
       '<div class="meta"><span>📑 '+l.sections+' sekcí</span><span>✏️ '+l.exercises+' cvičení</span>'+(p.time?'<span>⏱ '+Math.round(p.time/60)+' min</span>':'')+'</div>'+
-      '<div class="bar"><i style="width:'+p.pct+'%"></i></div><div class="row"><span class="sub grow">'+(p.manual?'✅ označeno jako hotovo':p.done+'/'+p.total+' cvičení · '+p.pct+' %')+'</span><button class="chip" data-done="'+idx+'" style="min-height:30px">'+(p.manual?'↺':'✓ hotovo')+'</button></div></a>'});
+      (l.anki?'<div class="meta"><a class="chip" style="min-height:30px;display:inline-flex;align-items:center;text-decoration:none" href="'+l.anki.file+'" download data-dl="1">⬇ Balíček .apkg</a><span>🧠 '+l.anki.cards+' karet · '+l.anki.mb+' MB</span></div>':'')+'<div class="bar"><i style="width:'+p.pct+'%"></i></div><div class="row"><span class="sub grow">'+(p.manual?'✅ označeno jako hotovo':p.done+'/'+p.total+' cvičení · '+p.pct+' %')+'</span><button class="chip" data-done="'+idx+'" style="min-height:30px">'+(p.manual?'↺':'✓ hotovo')+'</button></div></div>'});
     html+='</div>'});
   $('lessons').innerHTML=html||'<p class="empty">Nic nenalezeno 🤷</p>';
   var th='';if(nq.length>=2){var hits=D.cards.filter(function(c){return norm(c.la).indexOf(nq)>=0||norm(c.cz).indexOf(nq)>=0}).slice(0,12);
     if(hits.length)th='<h2>🔤 Pojmy <small>'+hits.length+(hits.length===12?'+':'')+'</small></h2><div class="panel"><ul class="dl">'+hits.map(function(c){var l=D.lessons.filter(function(x){return x.slug===c.src})[0];return '<li><b class="grow">'+esc(c.la)+'</b><span class="grow">'+esc(c.cz)+'</span><a class="sub" href="viewer.html?l='+c.src+'">'+esc(l.subj+' – '+l.title)+'</a></li>'}).join('')+'</ul></div>'}
   $('termhits').innerHTML=th}
-$('lessons').addEventListener('click',function(e){var b=e.target.closest('[data-done]');if(!b)return;e.preventDefault();var l=D.lessons[+b.dataset.done],m=ls('sh_done',{});if(m[l.slug])delete m[l.slug];else m[l.slug]=1;ss('sh_done',m);render()});
+$('lessons').addEventListener('click',function(e){if(e.target.closest('[data-dl]'))return;var b=e.target.closest('[data-done]');if(!b){var c=e.target.closest('[data-href]');if(c)location.href=c.dataset.href;return}e.preventDefault();var l=D.lessons[+b.dataset.done],m=ls('sh_done',{});if(m[l.slug])delete m[l.slug];else m[l.slug]=1;ss('sh_done',m);render()});
 $('q').addEventListener('input',function(){q=this.value;render()});
 chips();render();
 window.addEventListener('pageshow',render);window.addEventListener('storage',render);
@@ -57,20 +57,10 @@ $('pgo').onclick=function(){if(tk){stop();pdraw();return}end=Date.now()+left*100
 $('preset').onclick=function(){stop();left=modes[pm][1]*60;pdraw()};
 $('pmodes').onclick=function(e){var b=e.target.closest('[data-m]');if(!b)return;stop();pm=+b.dataset.m;left=modes[pm][1]*60;pchips();pdraw()};
 pchips();pdraw();
-/* flashcards (Leitner-lite) */
-var box=ls('sh_fc',{}),deck=[],cur=null,seen=0;
-$('fsrc').innerHTML='<option value="">Všechny lekce</option>'+D.lessons.map(function(l){return '<option value="'+l.slug+'">'+esc(l.subj+' – '+l.title)+'</option>'}).join('');
-function ck(c){return c.la+'|'+c.cz}
-function build(){var s=$('fsrc').value;deck=D.cards.filter(function(c){return !s||c.src===s});$('fcount').textContent='('+deck.length+')';nextCard()}
-function nextCard(){if(!deck.length)return;var w=deck.map(function(c){var b=box[ck(c)]||0;return 1/Math.pow(3,b)}),t=w.reduce(function(a,b){return a+b},0),r=Math.random()*t,i=0;for(;i<deck.length;i++){r-=w[i];if(r<=0)break}
-  var n=deck[Math.min(i,deck.length-1)];if(n===cur&&deck.length>1)return nextCard();cur=n;var la=$('fdir').value==='la';$('fc').classList.remove('flip');
-  setTimeout(function(){$('ff').innerHTML=esc(la?cur.la:cur.cz)+'<small>'+esc(la?'latinsky':'česky')+'</small>';$('fb').innerHTML=esc(la?cur.cz:cur.la)+'<small>'+esc(cur.sec)+'</small>'},150)}
-function flip(){$('fc').classList.toggle('flip')}
-$('fc').onclick=flip;$('fc').onkeydown=function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}};
-function answer(ok){if(!cur)return;var k=ck(cur);box[k]=ok?Math.min(5,(box[k]||0)+1):0;ss('sh_fc',box);seen++;addMin(.5);
-  var known=deck.filter(function(c){return (box[ck(c)]||0)>=2}).length;$('fstat').textContent='Teď '+seen+' kartiček · umíš '+known+'/'+deck.length;nextCard()}
-$('fyes').onclick=function(){answer(true)};$('fno').onclick=function(){answer(false)};
-$('fsrc').onchange=build;$('fdir').onchange=nextCard;build();
+/* anki */
+try{localStorage.removeItem('sh_fc')}catch(e){}
+$('lessons').addEventListener('keydown',function(e){var c=e.target.closest('[data-href]');if(c&&e.key==='Enter')location.href=c.dataset.href});
+$('ankil').innerHTML=D.lessons.filter(function(l){return l.anki}).map(function(l){return '<li><span class="grow"><b>'+esc(l.subj+' – '+l.title)+'</b><br><span class="sub">'+esc(l.anki.deck)+' · '+l.anki.cards+' karet · '+l.anki.mb+' MB</span></span><a class="chip" style="min-height:34px;display:inline-flex;align-items:center;text-decoration:none" href="'+l.anki.file+'" download>⬇ .apkg</a></li>'}).join('')||'<li class="empty">Zatím žádné balíčky.</li>';
 /* deadlines */
 var EX=[{t:'Latina – test slovíček L5–6',o:10,ex:1},{t:'Anatomie – zápočtový test: svaly hlavy a krku',o:17,ex:1},{t:'Odevzdat protokol z kineziologie',o:24,ex:1}];
 var dl=ls('sh_deadlines',null);if(!dl){dl=EX.map(function(x){var d=new Date();d.setDate(d.getDate()+x.o);return{t:x.t,d:dkey(d),ex:1}});ss('sh_deadlines',dl)}
@@ -81,8 +71,8 @@ $('dl').onclick=function(e){var b=e.target.closest('[data-del]');if(!b)return;dl
 $('dform').onsubmit=function(e){e.preventDefault();var t=$('dtitle').value.trim(),d=$('ddate').value;if(!t||!d)return;dl.push({t:t.slice(0,120),d:d});ss('sh_deadlines',dl);this.reset();drawDl()};
 drawDl();
 /* backup */
-$('exp').onclick=function(){var o={};for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(/^(sh_|anat_|latina_)/.test(k))o[k]=localStorage.getItem(k)}
+$('exp').onclick=function(){var o={};for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(/^(sh_(?!fc)|anat_|latina_)/.test(k))o[k]=localStorage.getItem(k)}
   var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o)],{type:'application/json'}));a.download='studovna-zaloha-'+dkey()+'.json';document.body.appendChild(a);a.click();a.remove()};
 $('imp').onclick=function(){$('impf').click()};
-$('impf').onchange=function(){var f=this.files[0];if(!f)return;f.text().then(function(t){var o=JSON.parse(t);Object.keys(o).forEach(function(k){if(/^(sh_|anat_|latina_)/.test(k)&&typeof o[k]==='string')localStorage.setItem(k,o[k])});location.reload()}).catch(function(){alert('Soubor se nepodařilo načíst.')})};
+$('impf').onchange=function(){var f=this.files[0];if(!f)return;f.text().then(function(t){var o=JSON.parse(t);Object.keys(o).forEach(function(k){if(/^(sh_(?!fc)|anat_|latina_)/.test(k)&&typeof o[k]==='string')localStorage.setItem(k,o[k])});location.reload()}).catch(function(){alert('Soubor se nepodařilo načíst.')})};
 })();

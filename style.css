@@ -17,7 +17,7 @@ h1{font-size:1.45rem;margin:0;line-height:1.2}.sub{color:var(--mut);font-size:.9
 h2{font-size:1.1rem;margin:22px 0 10px;display:flex;align-items:center;gap:8px}h2 small{color:var(--mut);font-weight:400}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(82%,330px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
 @media(min-width:900px){.rail{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));overflow:visible}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--sh);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:transform .15s}
+.card{cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--sh);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:transform .15s}
 .card:active{transform:scale(.98)}
 .tag{font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--acc)}.tag.lat{color:var(--lat)}
 .card h3{margin:0;font-size:1.15rem}.card p{margin:0;color:var(--mut);font-size:.92rem;flex:1}
