@@ -59,3 +59,5 @@ header.top{max-width:1240px}
  #menu .uauth .ubtn{display:none}
  #menu .uauth .umenu{display:flex;position:static;box-shadow:none;border:0;padding:0;min-width:0}
  #menu .uauth .umenu a{padding:10px 14px;font-size:1rem;text-align:left}}
+.logo{background:none!important;overflow:hidden}.logo img{width:100%;height:100%;display:block}
+.flogo{vertical-align:-3px;border-radius:4px}

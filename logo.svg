@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Studovna FBMI – unavený mozek s kávou">
+<rect width="64" height="64" rx="15" fill="#dff2ea"/>
+<g stroke="#2b2330" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M12 30c-4-2-4-9 1-11 0-6 7-9 11-6 3-5 12-5 15 0 4-3 11 0 11 6 5 2 5 9 1 11 1 5-3 9-8 8H20c-5 1-9-3-8-8z" fill="#f6a7bd"/>
+<path d="M32 9v6M22 15c1 2 3 3 5 3M42 15c-1 2-3 3-5 3" fill="none" stroke-width="1.8" stroke="#c9607f"/>
+<path d="M18.5 35.5c2 1.6 5 1.6 7 0M38.5 35.5c2 1.6 5 1.6 7 0" fill="none" stroke="#8b5aa0" stroke-width="2.4"/>
+<circle cx="22" cy="27" r="6" fill="#fff"/><circle cx="42" cy="27" r="6" fill="#fff"/><path d="M28 27h8" fill="none"/>
+<path d="M17 25.5h10M37 25.5h10" stroke="#2b2330" stroke-width="2" fill="none" opacity=".9"/>
+<path d="M20 34c-2 3-2 7 2 9M44 34c2 3 2 7-2 9" fill="none" stroke="#2b2330"/>
+<path d="M20 40h22v13c0 3-2 5-5 5H25c-3 0-5-2-5-5z" fill="#fff"/>
+<path d="M42 43h3c3 0 4 2 4 4s-1 4-4 4h-3" fill="none"/>
+<path d="M18 46c2-1 4-1 5 1M46 46c-2-1-4-1-5 1" fill="#f6a7bd"/>
+</g>
+<circle cx="22" cy="28.5" r="1.8" fill="#2b2330"/><circle cx="42" cy="28.5" r="1.8" fill="#2b2330"/>
+<path d="M29.5 43.5h3v3h3v3h-3v3h-3v-3h-3v-3h3z" fill="#1f8a6c"/>
+<path d="M27 36c-1-1.5 1-2.5 0-4M33 36.5c-1-1.5 1-2.5 0-4" stroke="#8aa9a0" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+</svg>
