@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<title>O webu – Studovna FBMI</title>
+<meta name="description" content="Co je Studovna FBMI a jak funguje.">
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="index.html"><span class="logo">🦴</span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="o-webu.html" class="on" aria-current="page"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="phead"><h1>ℹ️ O webu</h1></div>
+<div class="grid">
+<div class="panel"><h3>Co to je</h3><p>Studovna je můj (Prokopův) studijní web pro 1. ročník fyzioterapie na FBMI ČVUT v Kladně. Interaktivní lekce z anatomie a latiny, Anki balíčky a pár nástrojů. Je to <b>prototyp</b> – časem přibydou další lekce.</p></div>
+<div class="panel"><h3>🔒 Soukromí</h3><p>Žádné účty, žádné sledování, žádné cookies. Postup v lekcích, série a termíny se ukládají jen v tvém prohlížeči (localStorage). Když vymažeš data prohlížeče, postup zmizí – proto je v <a href="nastroje.html#backup">Nástrojích</a> záloha.</p></div>
+<div class="panel"><h3>📱 Zařízení</h3><p>Funguje v Safari na iPhonu a iPadu i na počítači. Tip pro iPhone: Sdílet → <b>Přidat na plochu</b> a máš to jako appku.</p></div>
+<div class="panel"><h3>⚠️ Upozornění</h3><p>Materiály dělám při učení – můžou obsahovat chyby. Vždycky ověř v přednáškách a učebnici. Když najdeš chybu, napiš mi.</p></div>
+</div>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

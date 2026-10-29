@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<title>Anki – Studovna FBMI</title>
+<meta name="description" content="Anki balíčky ke stažení, AnkiWeb a doplňky, které používám.">
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="index.html"><span class="logo">🦴</span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="anki.html" class="on" aria-current="page"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="phead"><h1>🧠 Anki</h1><p class="sub">Anki je aplikace na kartičky s chytrým opakováním – ukáže ti kartu přesně ve chvíli, kdy bys ji začal zapomínat.</p>
+<div class="subnav"><a href="#balicky">⬇ Balíčky</a><a href="#ankiweb">🌐 AnkiWeb</a><a href="#doplnky">🧩 Doplňky</a><a href="anki-navod.html">🧭 Návod krok za krokem</a></div></div>
+<section id="balicky"><h2>⬇ Balíčky ke stažení</h2>
+<div class="grid" id="ankigroups"></div>
+<div class="panel note"><b>Jak importovat (zdarma):</b> Anki na PC/Macu → stáhni a dvojklik na soubor .apkg · AnkiDroid → otevři stažený soubor (nebo Import) · AnkiWeb → naimportuj na PC a dej Sync, pak se to objeví i na webu. Balíčky jsou bez cizí historie opakování – začínáš od nuly. <a href="anki-navod.html#import">Podrobný návod s obrázky →</a></div>
+</section>
+<section id="ankiweb"><h2>🌐 AnkiWeb</h2>
+<div class="panel row wrapr"><div class="grow"><b>AnkiWeb</b> – bezplatná synchronizace mezi zařízeními + opakování přímo v prohlížeči (i na iPhonu/iPadu v Safari).</div><a class="btn pri" href="https://ankiweb.net" target="_blank" rel="noopener noreferrer">ankiweb.net ↗</a></div>
+</section>
+<section id="doplnky"><h2>🧩 Doplňky, které používám</h2>
+<div class="panel note">ℹ️ Doplňky fungují <b>jen v Anki na počítači (PC/Mac)</b> – ne v AnkiDroidu ani na AnkiWebu. Instalace: <b>Tools → Add-ons → Get Add-ons…</b> (česky Nástroje → Doplňky → Získat doplňky…) → vlož kód → OK → restartuj Anki. <a href="anki-navod.html#doplnky">Návod s obrázky →</a></div>
+<div class="grid"><article class="panel addon">
+  <div class="row"><h3 class="grow">🍙 Onigiri <small class="sub">by Peace</small></h3></div>
+  <p>Předělá hlavní obrazovku Anki na moderní, přehlednou nástěnku, kterou si můžeš přizpůsobit (motivy, rozvržení). K opakování přidává trochu hry – minihry, Pokémon parťáky, levely a „ostrůvky“, které si stavíš.</p><p class="sub"><b>Proč se hodí:</b> Anki pak nevypadá jako tabulka z roku 2005 a víc se chce vracet k opakování každý den.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>1011095603</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/1011095603" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article>
+<article class="panel addon">
+  <div class="row"><h3 class="grow">🟩 Review Heatmap</h3></div>
+  <p>Do hlavního okna přidá „heatmapu“ jako na GitHubu – barevné čtverečky ukazují, kolik jsi opakoval v minulých dnech a kolik karet tě čeká. Vedle ukazuje aktuální sérii (streak). Kliknutím na den uvidíš karty z toho dne.</p><p class="sub"><b>Proč se hodí:</b> Na první pohled vidíš, jestli opakuješ pravidelně – a nechceš si přerušit sérii.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>1771074083</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/1771074083" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article>
+<article class="panel addon">
+  <div class="row"><h3 class="grow">🔋 Power <small class="sub">by Peace</small></h3></div>
+  <p>Ukazuje stav baterie notebooku přímo v menu Anki.</p><p class="sub"><b>Proč se hodí:</b> Při dlouhém učení v knihovně víš, kdy dobít, aniž bys odbíhal z Anki. Hodí se hlavně k Onigiri.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>643961895</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/643961895" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article>
+<article class="panel addon">
+  <div class="row"><h3 class="grow">🕒 Hours <small class="sub">by Peace</small></h3></div>
+  <p>Zobrazuje hodiny (aktuální čas) přímo v menu Anki.</p><p class="sub"><b>Proč se hodí:</b> Máš přehled o čase, i když máš Anki přes celou obrazovku. Taky pěkně ladí s Onigiri.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>691162538</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/691162538" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article>
+<article class="panel addon">
+  <div class="row"><h3 class="grow">⌨️ Customize Keyboard Shortcuts</h3></div>
+  <p>Umožní změnit klávesové zkratky na hlavní obrazovce, v editoru, při opakování i v přehledu balíčků. Nastavuje se přes Nástroje → Doplňky → vybrat doplněk → Config.</p><p class="sub"><b>Proč se hodí:</b> Odpovídání si nastavíš na klávesy, které ti sednou pod ruku – opakování jde rychleji.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>24411424</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/24411424" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article>
+<article class="panel addon optional">
+  <div class="row"><h3 class="grow">🔌 AnkiConnect</h3><span class="badge">volitelné · pro pokročilé</span></div>
+  <p>Umožní jiným programům (třeba slovníkům nebo poznámkovým aplikacím) komunikovat s Anki – hledat v kartách nebo automaticky vytvářet nové karty.</p><p class="sub"><b>Proč se hodí:</b> Běžně ho nepotřebuješ – hodí se, jen když používáš nástroj, který si s Anki „povídá“.</p>
+  <div class="row wrapr"><span class="code" title="Kód doplňku">kód <b>2055492159</b></span><a class="btn sm" href="https://ankiweb.net/shared/info/2055492159" target="_blank" rel="noopener noreferrer">Stránka na AnkiWebu ↗</a></div>
+</article></div>
+</section>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

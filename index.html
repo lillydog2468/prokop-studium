@@ -16,54 +16,39 @@
 <meta name="description" content="Studovna pro 1. ročník fyzioterapie na FBMI ČVUT: interaktivní lekce z anatomie a latiny, Anki balíčky, pomodoro a termíny.">
 </head>
 <body>
-<header class="top">
-  <div class="logo">🦴</div>
-  <div><h1>Studovna FBMI <span class="proto">prototyp</span></h1><div class="sub">Fyzioterapie · 1. ročník · Kladno</div></div>
-  <div class="sp"></div>
+<header class="nav"><div class="navin">
+  <a class="brand" href="index.html"><span class="logo">🦴</span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="index.html" class="on" aria-current="page"><span aria-hidden="true">🏠</span> Domů</a><a href="lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
   <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
-</header>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
 <main class="wrap">
-  <div class="search"><span>🔎</span><input id="q" type="search" placeholder="Hledej lekci nebo pojem (třeba „masseter“, „cor“)…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-  <div class="chips" id="chips"></div>
-  <div id="lessons"></div>
-  <div id="termhits"></div>
 
-  <h2>🧰 Nástroje</h2>
-  <div class="grid">
-    <section class="panel" id="today">
-      <h3>🔥 Studijní série</h3>
-      <div class="row"><div class="big" id="streakN">0</div><div class="grow">dní v řadě<br><span class="sub" id="goalTxt"></span></div></div>
-      <div class="bar" style="margin:8px 0"><i id="goalBar"></i></div>
-      <div class="streak" id="week"></div>
-      <div class="row"><label class="sub grow" for="goal">Denní cíl (minut):</label><select id="goal" style="width:90px"><option>15</option><option>25</option><option>50</option><option>75</option><option>100</option></select></div>
-      <p class="sub" style="margin:8px 0 0">Počítají se minuty z dokončených pomodor.</p>
-    </section>
-    <section class="panel" id="pomo">
-      <h3>🍅 Pomodoro</h3>
-      <div class="chips" id="pmodes"></div>
-      <div class="timer" id="ptime">25:00</div>
-      <div class="btns"><button class="pri" id="pgo">▶ Start</button><button id="preset">↺ Reset</button></div>
-      <p class="sub" style="text-align:center;margin:8px 0 0" id="pinfo">Dnes 0 pomodor</p>
-    </section>
-    <section class="panel" id="anki">
-      <h3>🧠 Anki balíčky</h3>
-      <ul class="dl" id="ankil"></ul>
-      <p class="sub" style="margin:8px 0 0"><b>Jak importovat (zdarma):</b> Anki na PC/Macu → stáhni a dvojklik na soubor .apkg · AnkiDroid → otevři stažený soubor (nebo Import) · AnkiWeb → naimportuj na PC a dej Sync, pak se to objeví i na webu. Balíčky jsou bez cizí historie opakování – začínáš od nuly.</p>
-    </section>
-    <section class="panel" id="terms">
-      <h3>📅 Rozvrh &amp; termíny</h3>
-      <ul class="dl" id="dl"></ul>
-      <form id="dform" class="row" style="flex-wrap:wrap" autocomplete="off">
-        <input id="dtitle" class="grow" placeholder="Co (zápočet, test…)" required style="min-width:150px">
-        <input id="ddate" type="date" required style="width:auto">
-        <button class="pri" type="submit">Přidat</button>
-      </form>
-      <p class="sub" style="margin:8px 0 0">Ukládá se jen v tomhle prohlížeči. Položky „příklad“ klidně smaž.</p>
-    </section>
-  </div>
+<section class="hero">
+  <h1>Ahoj! 👋 Tady se učíme anatomii a latinu.</h1>
+  <p>Interaktivní lekce, Anki balíčky a pár nástrojů na soustředění. Všechno zdarma, bez účtu – tvůj postup si pamatuje jen tvůj prohlížeč.</p>
+  <div class="btns left"><a class="btn pri" href="lekce.html">📚 Všechny lekce</a><a class="btn" href="anki.html">🧠 Anki balíčky</a></div>
+</section>
+<h2>▶️ Pokračuj, kde jsi skončil</h2>
+<div id="cont"></div>
+<h2>📊 Tvůj postup</h2>
+<div class="grid3" id="stats"></div>
+<h2>⚡ Rychlé odkazy</h2>
+<div class="tiles">
+  <a class="tile" href="lekce.html?s=Anatomie"><span>🫀</span><b>Anatomie</b><small>Svaly, kosti, axiální systém</small></a>
+  <a class="tile" href="lekce.html?s=Latina"><span>🏛️</span><b>Latina</b><small>Lekce 1–6, slovíčka, překlady</small></a>
+  <a class="tile" href="anki.html"><span>🧠</span><b>Anki</b><small>Balíčky ke stažení + doplňky</small></a>
+  <a class="tile" href="anki-navod.html"><span>🧭</span><b>Návod k Anki</b><small>Instalace, import, doplňky krok za krokem</small></a>
+  <a class="tile" href="nastroje.html#pomo"><span>🍅</span><b>Pomodoro</b><small>25 min učení, 5 min pauza</small></a>
+  <a class="tile" href="nastroje.html#terms"><span>📅</span><b>Termíny</b><small>Zápočty a testy</small></a>
+</div>
 </main>
-<footer>Studovna FBMI · prototyp · bez přihlašování, bez sledování – postup se ukládá jen ve tvém zařízení (localStorage).<br><button id="exp" style="margin-top:8px;min-height:32px;font-size:.8rem">⬇ Záloha postupu</button> <button id="imp" style="margin-top:8px;min-height:32px;font-size:.8rem">⬆ Obnovit zálohu</button><input type="file" id="impf" accept="application/json" hidden></footer>
+<footer class="foot"><div class="footin">
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="anki-navod.html">Návod k Anki</a></div>
+</div></footer>
 <script src="data.js"></script>
+<script src="site.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
