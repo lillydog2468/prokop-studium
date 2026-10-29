@@ -1,0 +1,28 @@
+html.gated body{visibility:hidden}html.gated #cwrap,html.gated #cwrap *{visibility:visible}
+.uauth{display:inline-flex;gap:8px;align-items:center;margin-left:6px;font-size:.85rem}
+.uauth .uemail{color:var(--mut,#667);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.uauth a{border:1px solid var(--line,#d9dfdc);border-radius:999px;padding:4px 10px;text-decoration:none}
+#hubback .uauth .uemail{display:none}#hubback .uauth a{color:#fff;border-color:rgba(255,255,255,.5)}
+.login{max-width:440px;margin:18px auto 30px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.login h1{font-size:1.4rem;margin:0 0 4px}.login .sub{margin:0 0 14px}
+.ltabs{display:flex;gap:6px;margin:0 0 14px;border-bottom:1px solid var(--line)}
+.ltabs button{flex:1;background:none;border:0;border-bottom:2px solid transparent;padding:10px 6px;font:inherit;font-weight:600;color:var(--mut);cursor:pointer}
+.ltabs button.on{color:var(--acc);border-bottom-color:var(--acc)}
+.login form{display:grid;gap:10px}.login label{display:grid;gap:4px;font-size:.92rem;font-weight:600}
+.login input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:inherit}
+.login input:focus{outline:2px solid var(--acc);outline-offset:1px}
+.login .btn{justify-content:center}.login .alt{font-size:.9rem;text-align:center;margin:4px 0 0}
+.lmsg{margin:12px 0 0;padding:10px 12px;border-radius:10px;border:1px solid var(--line);font-size:.93rem}
+.lmsg.err{border-color:#d9a0a0;background:rgba(200,60,60,.07);color:#8b2318}.lmsg.ok{border-color:#9fcbbd;background:rgba(31,111,92,.07);color:#1f6f5c}
+[data-theme=dark] .lmsg.err{color:#f1a9a0}[data-theme=dark] .lmsg.ok{color:#8fd5bf}
+.login form[hidden],.lmsg[hidden]{display:none}
+.lwrap{max-width:880px;margin:18px auto 30px;display:grid;gap:14px}
+.lwrap .login{max-width:none;margin:0}
+.lgrid{display:grid;gap:14px}@media(min-width:760px){.lgrid{grid-template-columns:1fr 1fr}}
+.lwrap h2{font-size:1.15rem;margin:0 0 10px}
+.pinrow{display:flex;gap:10px;align-items:end}.pinrow label{flex:0 1 160px}.pinrow input{font-size:1.3rem;letter-spacing:.2em;text-align:center}
+
+.login[hidden]{display:none}
+
+.lh1{font-size:1.5rem;margin:0}.lwrap>.sub{margin:-8px 0 0}
+.login form[hidden]{display:none!important}

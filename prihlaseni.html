@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://hitscounter.dev https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self'; connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="auth.css">
+<script src="supabase.js"></script>
+<script src="auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-public></script>
+<script src="theme.js"></script>
+<title>Přihlášení – Studovna FBMI</title>
+<meta name="description" content="Přihlášení do Studovny FBMI.">
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="index.html"><span class="logo">🦴</span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="tahak-latina.html"><span aria-hidden="true">📜</span> Tahák</a><a href="anki.html"><span aria-hidden="true">🧠</span> Anki</a><a href="nastroje.html"><span aria-hidden="true">🧰</span> Nástroje</a><a href="o-webu.html"><span aria-hidden="true">ℹ️</span> O webu</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+
+<div class="lwrap">
+<h1 class="lh1">Přihlášení</h1><p class="sub">Materiály Studovny FBMI jsou jen pro přihlášené.</p>
+<div class="lgrid">
+<section class="login lnew" aria-labelledby="uh"><h2 id="uh">Máš PIN?</h2>
+<form id="f-pin" novalidate><div class="pinrow"><label>PIN<input id="pin" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" required></label><button class="btn pri" type="submit">Ověřit PIN</button></div></form>
+<p id="pmsg" class="lmsg" role="status" aria-live="polite" hidden></p>
+<form id="f-up" hidden novalidate><label>E-mail<input id="up-email" type="email" autocomplete="email" required></label><label>Heslo (aspoň 8 znaků)<input id="up-pw" type="password" autocomplete="new-password" minlength="8" required></label><label>Heslo znovu<input id="up-pw2" type="password" autocomplete="new-password" minlength="8" required></label><button class="btn pri" type="submit">Vytvořit účet</button></form>
+<p id="umsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
+<section class="login" aria-labelledby="lh"><h2 id="lh">Přihlásit se</h2>
+<form id="f-in" novalidate><label>E-mail<input id="in-email" type="email" autocomplete="email" required></label><label>Heslo<input id="in-pw" type="password" autocomplete="current-password" required></label><button class="btn pri" type="submit">Přihlásit</button><p class="alt"><a href="#" id="to-reset">Zapomenuté heslo?</a></p></form>
+<form id="f-reset" hidden novalidate><p class="sub">Pošleme ti odkaz na nastavení nového hesla.</p><label>E-mail<input id="re-email" type="email" autocomplete="email" required></label><button class="btn" type="submit">Poslat odkaz</button></form>
+<p id="lmsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
+</div>
+<section class="login" id="s-newpw" hidden aria-labelledby="nh"><h2 id="nh">Nové heslo</h2>
+<form id="f-newpw" novalidate><label>Nové heslo<input id="np-pw" type="password" autocomplete="new-password" minlength="8" required></label><button class="btn pri" type="submit">Uložit heslo</button></form>
+<p id="nmsg" class="lmsg" role="status" aria-live="polite" hidden></p></section>
+</div>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Přístup po přihlášení e-mailem. Postup v lekcích se ukládá jen v tvém zařízení.</span></div>
+  <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="#" data-consent-reset>Nastavení měření</a></div>
+</div></footer>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="login.js"></script>
+<script src="consent.js" data-ga="G-LTRCBRC44Y"></script>
+<div id="hitc" aria-hidden="true" style="position:absolute;left:-9px;top:0;width:1px;height:1px;overflow:hidden;opacity:0"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium%2Fprihlaseni" alt="" width="1" height="1" referrerpolicy="no-referrer"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium" alt="" width="1" height="1" referrerpolicy="no-referrer"></div>
+</body>
+</html>

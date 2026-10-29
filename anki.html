@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="cs">
+<html lang="cs" class="gated">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://hitscounter.dev https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self'; connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://hitscounter.dev https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self'; connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
@@ -12,6 +12,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🦴%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="auth.css">
+<script src="supabase.js"></script>
+<script src="auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V"></script>
 <script src="theme.js"></script>
 <title>Anki – Studovna FBMI</title>
 <meta name="description" content="Anki balíčky ke stažení, AnkiWeb a doplňky, které používám.">
@@ -69,7 +72,7 @@
 </section>
 </main>
 <footer class="foot"><div class="footin">
-  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Bez přihlašování, bez sledování – postup se ukládá jen v tvém zařízení.</span></div>
+  <div><b>🦴 Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Studijní materiály pro 1. ročník fyzioterapie (FBMI ČVUT, Kladno). Přístup po přihlášení e-mailem. Postup v lekcích se ukládá jen v tvém zařízení.</span></div>
   <div class="flinks"><a href="index.html">Domů</a><a href="lekce.html">Lekce</a><a href="tahak-latina.html">Tahák</a><a href="anki.html">Anki</a><a href="nastroje.html">Nástroje</a><a href="o-webu.html">O webu</a><a href="#" data-consent-reset>Nastavení měření</a></div>
 </div></footer>
 <script src="data.js"></script>
