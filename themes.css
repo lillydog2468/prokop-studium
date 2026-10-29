@@ -6,19 +6,6 @@
 .thero a{color:#fff}.thero .back{color:rgba(255,255,255,.85)}
 @media (max-width:600px){.thero{padding:18px 16px;gap:12px}.thero .tlogo{width:54px;height:54px;font-size:30px}.thero .tlogo img{width:42px;height:42px}}
 
-/* Obsidian – fialová na tmavé */
-body.t-obs{--acc:#7c3aed;--acc2:#a78bfa;--lat:#7c3aed}
-[data-theme=dark] body.t-obs{--bg:#1e1e1e;--card:#262626;--ink:#dcddde;--mut:#a3a3a3;--acc:#a88bfa;--acc2:#c4b5fd;--line:#363636;--lat:#a88bfa}
-body.t-obs .hero,body.t-obs .thero{background:radial-gradient(120% 140% at 0% 0%,#4c1d95 0%,#2e1065 45%,#1e1e1e 100%);border:1px solid #3b2a6b}
-body.t-obs .hero .btn.pri{background:#7c3aed;border-color:#7c3aed;color:#fff}
-body.t-obs .hero .btn:not(.pri){background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:#fff}
-body.t-obs .ohead{display:flex;gap:16px;align-items:center}body.t-obs .ohead img{width:64px;height:64px;flex:none}
-@media (max-width:600px){body.t-obs .ohead img{width:48px;height:48px}}
-body.t-obs .logo{background:linear-gradient(135deg,#7c3aed,#4c1d95)}
-body.t-obs .sn{background:#7c3aed}[data-theme=dark] body.t-obs .sn{background:#8b5cf6}
-body.t-obs a{color:#6d28d9}[data-theme=dark] body.t-obs a{color:#b69cff}
-body.t-obs .hero a,body.t-obs #menu a.on{color:#fff}
-
 /* Anki – modrá */
 body.t-anki{--acc:#1d6fd1;--acc2:#e08a3c}
 [data-theme=dark] body.t-anki{--acc:#6aa8f0;--bg:#121822;--card:#1a2230;--line:#2a3547}
@@ -37,7 +24,7 @@ body.t-lat .logo{background:linear-gradient(135deg,#8b2318,#c9a227)}
 body.t-lat #menu a.on{color:#fff}
 
 /* Domů / Lekce – dlaždice a karty podle tématu */
-.tile[href*="obsidian"]{border-top:4px solid #7c3aed}.tile[href*="anki"]{border-top:4px solid #1d6fd1}
+.tile[href*="anki"]{border-top:4px solid #1d6fd1}
 .tile[href*="Latina"],.tile[href*="tahak"]{border-top:4px solid #a33a22}.tile[href*="Anatomie"]{border-top:4px solid #0f766e}
 .tile[href*="nastroje"]{border-top:4px solid #e08a3c}
 .card .tag{border-left:4px solid #0f766e;padding-left:7px}.card .tag.lat{border-left-color:#a33a22;color:#a33a22}
