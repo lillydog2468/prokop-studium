@@ -35,6 +35,7 @@ button:disabled{opacity:.45}.svgc{width:100%;max-width:420px;display:block;margi
 @media(max-width:760px){.cmp{grid-template-columns:1fr}.cv ul{display:block}}
 </style><link rel="icon" href="logo.svg" type="image/svg+xml">
 <style id="lthm">header{background:linear-gradient(135deg,#0b4f4f,#0f766e 65%,#138a80)!important;border-bottom:3px solid #c0392b}body{background:#f2f6f5}</style>
+<style id="tbig">#timer{font-size:19px;font-weight:700;gap:6px;background:#0003;padding:4px 6px 4px 12px;border-radius:999px}#timer button{font-size:17px;padding:5px 12px}#tframe{display:none;position:fixed;inset:0;border:5px solid #e0201b;pointer-events:none;z-index:2147483646}html.trun #tframe{display:block}@media(max-width:600px){#timer{font-size:18px}}</style>
 </head>
 <body><header><button id="mbtn" type="button">☰</button><h1>Anatomie – Svaly hlavy a krku (studijní blok)</h1><span id="prog"></span><span id="saved"></span><span id="timer"><span id="tclock">⏱ 00:00</span><button id="tplay" type="button" title="Start/pauza">▶</button><button id="treset" type="button" title="Vynulovat čas">↺</button></span><button id="reset" type="button">reset</button></header>
 <div class="wrap"><nav id="nav"></nav><main id="main"></main></div>
@@ -176,6 +177,7 @@ ANIM.scal=el=>{el.innerHTML=`<h3>🎞️ Mm. scaleni – nádech a fissura scale
 tdraw();show();
 })();
 </script><div id="hubback" aria-label="Navigace webu" style="position:fixed;left:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:99999;display:flex;gap:2px;background:#1f6f5c;border-radius:999px;padding:3px;box-shadow:0 2px 10px rgba(0,0,0,.25);font:600 13px/1 system-ui,-apple-system,sans-serif;opacity:.95"><a href="lekce.html" style="color:#fff;text-decoration:none;padding:8px 11px;border-radius:999px">← Lekce</a><a href="index.html" style="color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.14)">🏠 Domů</a><a href="anki.html" style="color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px">🧠 Anki</a></div><script>(function(){try{if(window.top!==window.self){var b=document.getElementById('hubback');b&&b.remove();}}catch(e){}})();</script>
+<script src="timer-ram.js"></script>
 <script src="consent.js" data-ga="G-LTRCBRC44Y"></script>
 <div id="hitc" aria-hidden="true" style="position:absolute;left:-9px;top:0;width:1px;height:1px;overflow:hidden;opacity:0"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium%2Fsvaly-hlavy-krku" alt="" width="1" height="1" referrerpolicy="no-referrer"><img src="https://hitscounter.dev/api/hit?url=lillydog2468.github.io%2Fprokop-studium" alt="" width="1" height="1" referrerpolicy="no-referrer"></div>
 </body></html>
