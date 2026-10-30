@@ -1,0 +1,37 @@
+:root{--ink:#1f2933;--mut:#5f6b76;--line:#e2e6e8;--tq:#0f7c7c;--tqbg:#f2f8f8;--lat:#8b2318;--latbg:#fbf4ec;--anki:#1d6fd1}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tqbg);color:var(--ink);font:17px/1.6 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:3px solid var(--tq)}
+.top .in{max-width:760px;margin:auto;padding:8px 16px;display:flex;align-items:center;gap:10px}
+.top img{width:30px;height:30px}.top b{flex:1;font-size:15px}.top a{color:var(--tq);font-size:14px;text-decoration:none}
+.bar{height:4px;background:#e3eeee}.bar i{display:block;height:100%;width:0;background:var(--tq);transition:width .3s}
+main{max-width:760px;margin:auto;padding:18px 16px 90px}
+h1{font-size:24px;margin:6px 0 4px}.sub{color:var(--mut);font-size:15px;margin:0 0 14px}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:var(--tq);border:1px solid var(--tq);border-radius:4px;padding:0 6px;margin-bottom:6px}
+h2{font-size:21px;margin:34px 0 8px;padding-top:6px;border-top:1px solid var(--line)}h2 small{color:var(--mut);font-weight:400;font-size:14px;display:block}
+.read{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 18px 12px;margin:12px 0}
+.read p{margin:10px 0}.read .nt{color:var(--mut);font-size:15px}
+figure{margin:12px 0}figure img{max-width:100%;height:auto;border-radius:6px;border:1px solid var(--line);display:block}figcaption{font-size:12.5px;color:var(--mut);margin-top:4px}
+.lat{color:var(--lat)}b.lat{color:var(--lat)}
+.btn{font:inherit;font-size:15px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.btn.go{background:var(--tq);border-color:var(--tq);color:#fff}
+.prac{margin:10px 0 4px}.prac h3{font-size:15px;color:var(--mut);margin:16px 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.q{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}.q p{margin:2px 0 8px}
+.opt{display:block;width:100%;text-align:left;margin:5px 0}.opt.ok{background:#e3f4e6;border-color:#3a9a4a}.opt.no{background:#fbe5e5;border-color:#c94444}
+.fb{font-size:14px;color:var(--mut);margin-top:4px}.fb.ok{color:#2c7a3a}.fb.no{color:#b23a3a}
+.cl input{font:inherit;font-size:16px;border:1px solid #c9d0d4;border-radius:6px;padding:3px 8px;width:14em;max-width:100%}
+.lock{color:var(--mut);font-size:14px;margin:10px 0}
+.tips{background:#fff;border-left:4px solid var(--tq);border-radius:6px;padding:6px 14px;margin:12px 0;font-size:15px}
+.tahak{background:var(--latbg);border:1px solid #e8d8c4;border-radius:8px;padding:8px 14px;margin:12px 0;font-size:15px}.tahak h4{margin:2px 0 4px;color:var(--lat);font-size:14px}.tahak td{padding:1px 10px 1px 0;vertical-align:top}
+/* Anki – vzhled jako aplikace Anki: bílá karta, šedý rámeček, modré tlačítko */
+.anki{background:#fff;border:1px solid #d0d4d9;border-radius:6px;margin:14px 0;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.anki .ah{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #e5e7ea;background:#f7f8fa;border-radius:6px 6px 0 0;font-size:14px;color:#333}
+.anki .ah a{color:inherit;text-decoration:none;font-weight:600}.anki .ah a:hover{text-decoration:underline}
+.anki .ab{padding:10px 12px;font-size:15px}.anki .deck{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#444;word-break:break-word}
+.anki .cnt{color:var(--anki);font-weight:600}
+.abtn{display:inline-block;background:var(--anki);color:#fff!important;text-decoration:none;border-radius:5px;padding:7px 14px;font-size:14px;font-weight:600;margin:8px 0 4px;border:0}
+.abtn:hover{background:#165bb0}.anki label{display:block;margin-top:8px;font-size:15px}.anki input{transform:scale(1.25);margin-right:8px}
+.anki.mini .ab{padding:8px 12px}
+.done{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:24px 0}
+.target{animation:hl 2s}@keyframes hl{0%{box-shadow:0 0 0 4px #9cc3f3}100%{box-shadow:none}}
+@media(max-width:600px){body{font-size:16px}.read{padding:4px 13px 10px}h1{font-size:21px}}
