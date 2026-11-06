@@ -3,10 +3,22 @@
 var SOON='připravuje se';
 // Doplňkové možnosti podle slugu (study session = výchozí odkaz karty, přidává se automaticky jako první)
 var EXTRA={
- 'svaly-hlavy-krku':[{icon:'📖',label:'Lekce',note:'Čti → procvič → Anki pauza, 8 kapitol',url:'svaly-hlavy-krku-lekce.html'}]
+ 'svaly-hlavy-krku':[{icon:'📖',label:'Lekce',note:'Čti → procvič → Anki pauza, 8 kapitol',url:'svaly-hlavy-krku-lekce.html'}],
+ 'klouby-horni-koncetiny-uvod':[
+   {icon:'✏️',label:'Study session · Part 1 (~60 min)',note:'SC, AC, ST, GH, loket',url:'klouby-horni-koncetiny-cast1.html'},
+   {icon:'✏️',label:'Study session · Part 2 (~60 min)',note:'DRU, zápěstí, ruka',url:'klouby-horni-koncetiny-cast2.html'}
+ ],
+ 'klouby-horni-koncetiny-cast1':[
+   {icon:'📖',label:'Úvod (čtení)',note:'Nejdřív text, obrázky, videa – bez kvízů',url:'klouby-horni-koncetiny-uvod.html'},
+   {icon:'✏️',label:'Part 2 (~60 min)',note:'Předloktí, zápěstí, ruka',url:'klouby-horni-koncetiny-cast2.html'}
+ ],
+ 'klouby-horni-koncetiny-cast2':[
+   {icon:'📖',label:'Úvod (čtení)',note:'Bez kvízů',url:'klouby-horni-koncetiny-uvod.html'},
+   {icon:'✏️',label:'Part 1 (~60 min)',note:'Pletenec, rameno, loket',url:'klouby-horni-koncetiny-cast1.html'}
+ ]
 };
 var DEFAULT_EXTRA=[{icon:'📖',label:'Lekce',note:SOON,url:null}];
-function opts(slug,href){return [{icon:'✏️',label:'Study session',note:'Procvičování, obrázky, kvízy',url:href}].concat(EXTRA[slug]||DEFAULT_EXTRA)}
+function opts(slug,href){var first=(/-uvod$/.test(slug))?{icon:'📖',label:'Úvod (čtení)',note:'Text, obrázky, videa – bez kvízů',url:href}:{icon:'✏️',label:'Study session',note:'Procvičování, obrázky, kvízy',url:href};return [first].concat(EXTRA[slug]||DEFAULT_EXTRA)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 var box=document.getElementById('lessons');if(!box)return;
 function slugOf(c){var m=/[?&]l=([^&]+)/.exec(c.getAttribute('data-href')||'');return m?decodeURIComponent(m[1]):''}
