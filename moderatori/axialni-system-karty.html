@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="cs" class="gated">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://keguwppdetlgfzozngvk.supabase.co wss://keguwppdetlgfzozngvk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f5c">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="../auth.css">
+<style id="agate">html.gated body{visibility:hidden}#hubback .uauth{display:inline-flex;margin-left:4px}#hubback .uauth .uemail{display:none}#hubback .uauth a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px}</style>
+<script src="../supabase.js"></script>
+<script src="../auth.js" data-url="https://keguwppdetlgfzozngvk.supabase.co" data-key="sb_publishable_vde1q6kr64k81rFKdOVTTw_qFQ07n6V" data-staff data-base="../"></script>
+<script src="theme.js"></script>
+<title>Axiální systém – nové karty – Studovna FBMI</title>
+<style>
+.ak-nav{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
+.ak-nav a{border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none;background:var(--card);color:inherit;font-size:.9rem}
+.karta{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:0 0 12px;box-shadow:var(--sh)}
+.karta .meta{margin-bottom:6px}
+.front{font-size:1.05rem}
+.back{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.gap{display:inline-block;min-width:4.5em;border-bottom:2px solid var(--acc);background:#e7f5f1;border-radius:6px;padding:0 6px;margin:0 2px;font-weight:700;color:var(--acc)}
+.gap.on{background:transparent;color:inherit}
+.karta img{max-width:100%;height:auto}
+.occ{position:relative;display:inline-block;max-width:100%;margin:8px 0}
+.occ img{display:block;max-width:100%}
+.occ .r{position:absolute;box-sizing:border-box;border:2px solid #c2410c;background:rgba(194,65,12,.28);color:#fff;font:700 12px/1 system-ui,sans-serif;display:flex;align-items:center;justify-content:center;text-shadow:0 1px 2px #000}
+.ph{border:1px dashed #b45309;background:#fff7ed;color:#7c4a03;border-radius:8px;padding:16px;margin:8px 0}
+button.pri{margin-top:8px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="navin">
+  <a class="brand" href="../index.html"><span class="logo"><img src="../logo.svg" alt="" width="38" height="38"></span><span><b>Studovna FBMI</b> <span class="proto">prototyp</span><small>Fyzioterapie · 1. ročník</small></span></a>
+  <nav id="menu" aria-label="Hlavní menu"><a href="../index.html"><span aria-hidden="true">🏠</span> Domů</a><a href="../lekce.html"><span aria-hidden="true">📚</span> Lekce</a><a href="index.html" class="on" aria-current="page"><span aria-hidden="true">🛡️</span> Moderátoři</a><a href="../updaty.html"><span aria-hidden="true">📰</span> Updaty</a></nav>
+  <button class="icon" id="theme" title="Tmavý / světlý režim" aria-label="Přepnout tmavý režim">🌙</button>
+  <button class="icon burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+</div></header>
+<main class="wrap">
+<div class="phead"><h1>🔒 Axiální systém – nové karty</h1><p class="sub" id="lead">Jen pro moderátory a správce. Veřejná lekce axiálního systému se nemění.</p></div>
+<div class="ak-nav" id="aknav"></div>
+<div id="decks"></div>
+</main>
+<footer class="foot"><div class="footin">
+  <div><b><img class="flogo" src="../logo.svg" alt="" width="18" height="18"> Studovna FBMI</b> <span class="proto">prototyp</span><br><span class="sub">Karty z hotových subdecků. Otevře je jen moderátor nebo správce.</span></div>
+  <div class="flinks"><a href="../lekce.html">Lekce</a><a href="index.html">Pro moderátory</a><a href="../axialni-system.html">Veřejná lekce</a></div>
+</div></footer>
+<script src="site.js"></script>
+<script src="axialni-karty-data.js"></script>
+<script src="axialni-karty.js"></script>
+</body>
+</html>

@@ -21,7 +21,7 @@ function build(){var tot=0;D.chapters.forEach(function(c,ci){var h=el('h2','','K
   rb.onclick=function(){S['r'+id]=1;save();step();pr.scrollIntoView({behavior:'smooth',block:'start'})};
   units.push({r:r,rb:rb,pr:pr,id:id,ex:s.ex.map(function(_,xi){return'x'+id+'_'+xi}),g:g});tot++});
  var end=el('div');end.appendChild(el('div','tips','<b>Shrnutí – zapamatuj si:</b><ul>'+c.tips.map(function(t){return'<li>'+t+'</li>'}).join('')+'</ul>'));
- end.appendChild(el('div','tahak','<h4>📜 Latina z kapitoly</h4><table>'+c.terms.map(function(t){return'<tr><td>'+esc(t[0])+'</td><td class="lat">'+esc(t[1])+'</td></tr>'}).join('')+'</table>'));
+ if(c.terms&&c.terms.length){end.appendChild(el('div','tahak','<h4>📜 Latina z kapitoly</h4><table>'+c.terms.map(function(t){return'<tr><td>'+esc(t[0])+'</td><td class="lat">'+esc(t[1])+'</td></tr>'}).join('')+'</table>'));}
  end.appendChild(ankiBox(c,true));units.push({end:end,code:c.code,g:g})});
  var fin=el('div','done','<b>Konec ukázky.</b> Prošel/a jsi všech 8 kapitol. Procvičování a zápočtový test: <a href="svaly-hlavy-krku.html">Study session – Svaly hlavy a krku</a>.');units.push({fin:fin});
  M.addEventListener('change',function(e){var a=e.target.dataset&&e.target.dataset.anki;if(a){S['a'+a]=e.target.checked?1:0;save();step()}})}
